@@ -1,3 +1,4 @@
+import Footer from '@/components/footer/Footer'
 import Header from '@/components/header/Header'
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Props) {
       <body className={mono.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
