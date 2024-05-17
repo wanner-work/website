@@ -2,7 +2,10 @@ import Appear from '@/components/effects/Appear'
 import Beautiful from '@/components/effects/Beautiful'
 import Fun from '@/components/effects/Fun'
 import Reveal from '@/components/effects/Reveal'
+import BlogSummary from '@/components/entities/blog/BlogSummary'
+import ProjectSummary from '@/components/entities/projects/ProjectsSummary'
 import Box from '@wanner.work/box'
+import { Suspense } from 'react'
 
 export default function Home() {
   return (
@@ -18,11 +21,12 @@ export default function Home() {
               and <Fun /> to use.
             </h1>
           </Reveal>
-          <Appear>
-            <p className="mt-8 text-xl font-light italic opacity-70">
-              That's what I offer.
-            </p>
-          </Appear>
+          <p className="mt-8 text-xl font-light italic opacity-70">
+            <Appear>That's what I offer</Appear>
+            <Appear delay={7}>
+              <span className="opacity-50">, or, at least try to.</span>
+            </Appear>
+          </p>
         </div>
       </Box>
       <section>
@@ -32,8 +36,12 @@ export default function Home() {
             See what I have been up to recently.
           </p>
         </Box>
+
+        <Suspense fallback="loading...">
+          <ProjectSummary />
+        </Suspense>
       </section>
-      <section className="mt-12">
+      <section className="mt-20">
         <Box width="content" className="mx-auto text-white" px="large">
           <h2 className="text-3xl">Blog</h2>
           <p className="mt-2 font-light italic opacity-70">
@@ -41,15 +49,23 @@ export default function Home() {
             tricks.
           </p>
         </Box>
+
+        <Suspense fallback="loading...">
+          <BlogSummary />
+        </Suspense>
       </section>
 
-      <section className="mt-12">
+      <section className="mt-20">
         <Box width="content" className="mx-auto text-white" px="large">
           <h2 className="text-3xl">Packages</h2>
           <p className="mt-2 font-light italic opacity-70">
             Check out my latest packages and tools.
           </p>
         </Box>
+
+        <Suspense fallback="loading...">
+          <BlogSummary />
+        </Suspense>
       </section>
     </main>
   )

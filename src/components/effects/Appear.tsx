@@ -5,11 +5,13 @@ import { ReactNode } from 'react'
 
 interface Props {
   children: ReactNode | ReactNode[]
+  delay?: number
 }
 
-export default function Appear({ children }: Props) {
+export default function Appear({ children, delay }: Props) {
   return (
-    <motion.div
+    <motion.span
+      className="inline-block"
       initial={{
         opacity: 0,
         rotate: -4
@@ -19,11 +21,11 @@ export default function Appear({ children }: Props) {
         rotate: 0
       }}
       transition={{
-        delay: 3.5,
+        delay: delay || 3.5,
         duration: 1
       }}
     >
       {children}
-    </motion.div>
+    </motion.span>
   )
 }
