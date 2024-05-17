@@ -14,19 +14,8 @@ export default function Home() {
         <div>
           <Reveal>
             <h1 className="text-6xl leading-[70px]">
-              The <span>web</span> should be{' '}
-              <Beautiful>
-                <span className="bg-beautiful-gradient bg-clip-text text-transparent">
-                  beautiful
-                </span>
-              </Beautiful>{' '}
-              and{' '}
-              <Fun>
-                <span className="bg-fun-gradient bg-clip-text text-transparent">
-                  fun
-                </span>
-              </Fun>{' '}
-              to use.
+              The <span className="underline">web</span> should be <Beautiful />{' '}
+              and <Fun /> to use.
             </h1>
           </Reveal>
           <Appear>
@@ -36,6 +25,32 @@ export default function Home() {
           </Appear>
         </div>
       </Box>
+      <section>
+        <Box width="content" className="mx-auto text-white" px="large">
+          <h2 className="text-3xl">Latest projects</h2>
+          <p className="mt-2 font-light italic opacity-70">
+            See what I have been up to recently.
+          </p>
+        </Box>
+      </section>
+      <section className="mt-12">
+        <Box width="content" className="mx-auto text-white" px="large">
+          <h2 className="text-3xl">Blog</h2>
+          <p className="mt-2 font-light italic opacity-70">
+            Read about the latest trends and technologies as well as tips and
+            tricks.
+          </p>
+        </Box>
+      </section>
+
+      <section className="mt-12">
+        <Box width="content" className="mx-auto text-white" px="large">
+          <h2 className="text-3xl">Packages</h2>
+          <p className="mt-2 font-light italic opacity-70">
+            Check out my latest packages and tools.
+          </p>
+        </Box>
+      </section>
     </main>
   )
 }
