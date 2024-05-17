@@ -11,12 +11,18 @@ importers:
       '@heroicons/react':
         specifier: ^2.1.3
         version: 2.1.3(react@18.3.1)
+      '@notionhq/client':
+        specifier: ^2.2.15
+        version: 2.2.15
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.3)
       '@wanner.work/box':
         specifier: ^1.0.0
         version: 1.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@wanner.work/image':
+        specifier: ^2.0.0
+        version: 2.0.0(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@wanner.work/notion':
         specifier: ^1.0.0
         version: 1.0.0(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -205,6 +211,12 @@ packages:
 
   '@wanner.work/image@1.2.0':
     resolution: {integrity: sha512-TDiYnBrmrQxXU7u1UEDLzGoKpfE3giTMf9/CBBpbSU8CS5VIC+HEjrwpA4aw6XOaz2O+wSb25OJPx+GjRBIUUg==}
+    peerDependencies:
+      react: '>= 18'
+      react-dom: '>= 18'
+
+  '@wanner.work/image@2.0.0':
+    resolution: {integrity: sha512-PvfS1GoCZgDrZe6USbeEY4l8n2kB+nk2Eg2Ec7RHA0ZuWISsOMi2+kdZizVBafnDAaemza11vgVAgYFaVmQeYg==}
     peerDependencies:
       react: '>= 18'
       react-dom: '>= 18'
@@ -904,6 +916,14 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@wanner.work/image@1.2.0(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      jotai: 2.8.0(@types/react@18.3.2)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@wanner.work/image@2.0.0(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       jotai: 2.8.0(@types/react@18.3.2)(react@18.3.1)
       react: 18.3.1
