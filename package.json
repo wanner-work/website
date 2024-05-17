@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier . --write"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.3",
     "@wanner.work/box": "^1.0.0",
     "@wanner.work/notion": "^1.0.0",
+    "framer-motion": "^11.2.4",
     "next": "14.2.3",
+    "party-js": "^2.2.0",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "react": "^18",
