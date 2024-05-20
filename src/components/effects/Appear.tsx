@@ -7,6 +7,7 @@ interface Props {
   children: ReactNode | ReactNode[]
   delay?: number
   rotate?: number
+  scale?: number
   duration?: number
   display?: 'inline-block' | 'block'
 }
@@ -15,6 +16,7 @@ export default function Appear({
   children,
   delay = 0,
   rotate = -4,
+  scale = 1,
   duration = 0.3,
   display = 'inline-block'
 }: Props) {
@@ -23,11 +25,13 @@ export default function Appear({
       className={display}
       initial={{
         opacity: 0,
-        rotate: rotate
+        rotate: rotate,
+        scale: scale
       }}
       animate={{
         opacity: 1,
-        rotate: 0
+        rotate: 0,
+        scale: 1
       }}
       transition={{
         delay: delay,

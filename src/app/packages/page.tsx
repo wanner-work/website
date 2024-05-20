@@ -19,7 +19,7 @@ export default async function Page() {
     <>
       <PageHeader
         title="Packages"
-        description="A collection of public packages which I use in my projects."
+        description="A collection of my public packages which I use in projects."
       />
 
       <Box
@@ -50,7 +50,7 @@ export default async function Page() {
                     target="_blank"
                     href={getURLProperty(page.properties, 'Readme')}
                   >
-                    <button className="bg-blue-500/10 text-blue-500 py-2 rounded w-full">
+                    <button className="bg-blue-500/10 uppercase text-blue-500 py-2 rounded w-full">
                       Readme
                     </button>
                   </Link>
@@ -59,7 +59,7 @@ export default async function Page() {
                     target="_blank"
                     href={getURLProperty(page.properties, 'Changelog')}
                   >
-                    <button className="bg-purple-500/10 text-purple-500 py-2 rounded w-full">
+                    <button className="bg-purple-500/10 uppercase text-purple-500 py-2 rounded w-full">
                       Changelog
                     </button>
                   </Link>
