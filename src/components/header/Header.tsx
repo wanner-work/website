@@ -8,7 +8,10 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <header className="">
-      <Box className="mx-auto max-w-[850px] flex justify-between items-center">
+      <Box
+        className="mx-auto max-w-[850px] flex justify-between items-center"
+        px="medium"
+      >
         <AnimatePresence>
           <motion.span
             initial={{
@@ -45,8 +48,8 @@ export default function Header() {
                 delay: 0.5
               }}
             >
-              <Link href={'/blog'}>
-                <button className="text-white">Blog</button>
+              <Link href={'/projects'}>
+                <button className="text-white">Projects</button>
               </Link>
             </motion.span>
             <motion.span
@@ -64,8 +67,8 @@ export default function Header() {
                 delay: 0.7
               }}
             >
-              <Link href={'/packages'}>
-                <button className="text-white">Packages</button>
+              <Link href={'/blog'}>
+                <button className="text-white">Blog</button>
               </Link>
             </motion.span>
             <motion.span
@@ -83,8 +86,8 @@ export default function Header() {
                 delay: 0.9
               }}
             >
-              <Link href={'/projects'}>
-                <button className="text-white">Projects</button>
+              <Link href={'/packages'}>
+                <button className="text-white">Packages</button>
               </Link>
             </motion.span>
           </AnimatePresence>
