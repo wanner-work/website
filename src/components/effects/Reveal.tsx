@@ -9,8 +9,8 @@ interface Props {
 
 export default function Reveal({ children }: Props) {
   return (
-    <div className="-mx-10 -mt-20 -mb-14">
-      <div className="relative overflow-hidden p-10 pt-20 pb-14">
+    <div className="-mx-10 -ml-20 -mt-20 -mb-14">
+      <div className="relative overflow-hidden p-10 pl-20 pt-20 pb-14">
         <span>{children}</span>
         <motion.span
           className="h-full w-full absolute bottom-0 right-0 z-10 bg-black blur-lg scale-[200%]"

@@ -3,7 +3,6 @@ import Beautiful from '@/components/effects/Beautiful'
 import Fun from '@/components/effects/Fun'
 import Reveal from '@/components/effects/Reveal'
 import BlogSummary from '@/components/entities/blog/BlogSummary'
-import PackagesSummary from '@/components/entities/packages/PackagesSummary'
 import ProjectSummary from '@/components/entities/projects/ProjectsSummary'
 import Box from '@wanner.work/box'
 import { Suspense } from 'react'
@@ -32,10 +31,14 @@ export default function Home() {
           </p>
         </div>
       </Box>
+
       <section>
         <Box width="content" className="mx-auto text-white" px="large">
-          <h2 className="text-3xl">Latest projects</h2>
-          <p className="mt-2 font-light italic opacity-70">
+          <h2 className="text-4xl">
+            Latest projects
+            <span></span>
+          </h2>
+          <p className="mt-4 font-light italic opacity-70">
             See what I have been up to recently.
           </p>
         </Box>
@@ -46,8 +49,8 @@ export default function Home() {
       </section>
       <section className="mt-20">
         <Box width="content" className="mx-auto text-white" px="large">
-          <h2 className="text-3xl">Blog</h2>
-          <p className="mt-2 font-light italic opacity-70">
+          <h2 className="text-4xl">Blog</h2>
+          <p className="mt-4 font-light italic opacity-70">
             Read about the latest trends and technologies as well as tips and
             tricks.
           </p>
@@ -55,19 +58,6 @@ export default function Home() {
 
         <Suspense fallback="loading...">
           <BlogSummary />
-        </Suspense>
-      </section>
-
-      <section className="mt-20">
-        <Box width="content" className="mx-auto text-white" px="large">
-          <h2 className="text-3xl">Packages</h2>
-          <p className="mt-2 font-light italic opacity-70">
-            Check out my latest packages and tools.
-          </p>
-        </Box>
-
-        <Suspense fallback="loading...">
-          <PackagesSummary />
         </Suspense>
       </section>
     </main>

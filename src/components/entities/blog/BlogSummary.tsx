@@ -14,9 +14,13 @@ export default async function BlogSummary() {
   )
 
   return (
-    <Box px="large" className="mt-8 grid grid-cols-3 gap-3">
+    <Box
+      width="content"
+      px="large"
+      className="mt-8 mx-auto flex flex-col gap-4"
+    >
       {results.map((page) => (
-        <div key={page.id} className="h-[300px] relative">
+        <div key={page.id} className="h-[300px] w-full relative">
           <Image src={getNotionImageURL(page.cover)} fill alt="test" />
           <div className="bg-gradient-to-tr from-black to-black/40 absolute top-0 left-0 h-full w-full z-10 flex items-end text-white">
             <div className="p-8">
