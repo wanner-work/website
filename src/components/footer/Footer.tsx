@@ -4,7 +4,10 @@ import Box from '@wanner.work/box'
 export default function Footer() {
   return (
     <footer>
-      <Box className="mx-auto max-w-[850px] text-white text-sm mt-32 mb-8">
+      <Box
+        className="mx-auto max-w-[850px] text-white text-sm mt-32 mb-8"
+        px="medium"
+      >
         <div className="flex justify-between items-center">
           <span className="opacity-80">Copyright © 2024</span>
           <span className="flex gap-3 items-center">

@@ -1,23 +1,17 @@
+import getClient from '@/methods/notion/getClient'
+import getDatabaseResults from '@/methods/notion/getDatabaseResults'
 import getName from '@/methods/notion/getName'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
-import { Client } from '@notionhq/client'
-import {
-  PageObjectResponse,
-  QueryDatabaseResponse
-} from '@notionhq/client/build/src/api-endpoints'
 import Box from '@wanner.work/box'
 import Image from '@wanner.work/image'
 import { getNotionImageURL } from '@wanner.work/notion/helper'
 
 export default async function BlogSummary() {
-  const client = new Client({
-    auth: process.env.NOTION_SECRET
-  })
-
-  const request = (await client.databases.query({
-    database_id: process.env.BLOG_DATABASE_ID as string
-  })) as QueryDatabaseResponse
-  const results = request.results as PageObjectResponse[]
+  const client = getClient()
+  const results = await getDatabaseResults(
+    client,
+    process.env.BLOG_DATABASE_ID as string
+  )
 
   return (
     <Box px="large" className="mt-8 grid grid-cols-3 gap-3">
