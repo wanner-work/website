@@ -25,7 +25,7 @@ export default async function Page() {
       <Box
         width="content"
         className="mx-auto text-white flex flex-col gap-5"
-        px="medium"
+        px="small"
       >
         {results.map((page, index) => (
           <article key={page.id} className="w-full">

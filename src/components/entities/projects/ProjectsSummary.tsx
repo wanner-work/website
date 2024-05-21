@@ -15,7 +15,7 @@ export default async function ProjectSummary() {
   )
 
   return (
-    <Box px="large" className="mt-8 grid grid-cols-3 gap-3">
+    <Box px="large" className="mt-8 grid md:grid-cols-3 gap-3">
       {results.map((page) => (
         <Link href={`/projects/${getPlainProperty(page.properties, 'Slug')}`}>
           <article key={page.id} className="h-[300px] relative">

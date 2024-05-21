@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       <Box
         className="mx-auto max-w-[850px] text-white text-sm mt-32 mb-8"
-        px="medium"
+        px="small"
       >
         <div className="flex justify-between items-center">
           <span className="opacity-80">Copyright © 2024</span>

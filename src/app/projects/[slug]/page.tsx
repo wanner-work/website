@@ -47,7 +47,7 @@ export default async function Page({ params: { slug } }: Props) {
         image={getNotionImageURL(page.cover)}
       />
 
-      <Box className="mx-auto text-white mt-28" width="content" px="medium">
+      <Box className="mx-auto text-white mt-28" width="content" px="small">
         <Notion data={data} />
       </Box>
     </>
