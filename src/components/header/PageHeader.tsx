@@ -14,7 +14,7 @@ export default function PageHeader({ title, description, image }: Props) {
   return (
     <Box
       className={`flex items-center justify-center flex-col ${image ? 'h-full' : 'h-[35vh] '}`}
-      px="medium"
+      px="small"
     >
       {image && (
         <div className="max-w-[1100px] w-full mx-auto h-[40vh] mt-10 mb-20">
