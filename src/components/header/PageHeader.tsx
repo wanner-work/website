@@ -17,7 +17,7 @@ export default function PageHeader({ title, description, image }: Props) {
       px="small"
     >
       {image && (
-        <div className="max-w-[1100px] w-full mx-auto h-[40vh] mt-10 mb-20">
+        <div className="max-w-[1100px] w-full mx-auto h-[40vh] mt-14 md:mt-10 mb-20">
           <ImageProvider
             cache={{
               enabled: true,
