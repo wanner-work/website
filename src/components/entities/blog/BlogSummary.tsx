@@ -16,7 +16,7 @@ export default async function BlogSummary() {
   return (
     <Box
       width="content"
-      px="large"
+      px="medium"
       className="mt-8 mx-auto flex flex-col gap-4"
     >
       {results.map((page) => (
