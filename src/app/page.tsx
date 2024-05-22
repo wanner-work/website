@@ -9,11 +9,8 @@ import { Suspense } from 'react'
 
 export default function Home() {
   return (
-    <main>
-      <Box
-        className="min-h-screen max-w-[1100px] mx-auto -mt-[120px] md:-mt-[100px] h-full flex items-center text-white"
-        px="large"
-      >
+    <main className="overflow-hidden">
+      <Box className="min-h-screen max-w-[1100px] mx-auto -mt-[120px] md:-mt-[100px] h-full flex items-center text-white px-5">
         <div>
           <Reveal>
             <h1 className="text-5xl md:text-6xl leading-[62px] md:leading-[70px]">
@@ -33,19 +30,17 @@ export default function Home() {
       </Box>
 
       <section>
-        <Box width="content" className="mx-auto text-white" px="large">
+        <Box width="content" className="mx-auto text-white" px="medium">
           <h2 className="text-4xl">Latest projects</h2>
           <p className="mt-4 font-light italic opacity-70">
             See what I have been up to recently.
           </p>
         </Box>
 
-        <Suspense fallback="loading...">
-          <ProjectSummary />
-        </Suspense>
+        <Suspense fallback="loading...">{<ProjectSummary />}</Suspense>
       </section>
       <section className="mt-20">
-        <Box width="content" className="mx-auto text-white" px="large">
+        <Box width="content" className="mx-auto text-white" px="medium">
           <h2 className="text-4xl">Blog</h2>
           <p className="mt-4 font-light italic opacity-70">
             Read about the latest trends and technologies as well as tips and
@@ -53,9 +48,7 @@ export default function Home() {
           </p>
         </Box>
 
-        <Suspense fallback="loading...">
-          <BlogSummary />
-        </Suspense>
+        <Suspense fallback="loading...">{<BlogSummary />}</Suspense>
       </section>
     </main>
   )

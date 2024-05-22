@@ -5,7 +5,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@wanner.work/**/*.{ts,tsx}'
+    './node_modules/@wanner.work/**/*.{ts,tsx,js,jsx}'
   ],
   theme: {
     extend: {
