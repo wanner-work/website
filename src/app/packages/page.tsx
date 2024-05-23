@@ -1,7 +1,7 @@
 import Appear from '@/components/effects/Appear'
 import PageHeader from '@/components/header/PageHeader'
+import getCachedDatabaseResults from '@/methods/notion/getCachedDatabaseResults'
 import getClient from '@/methods/notion/getClient'
-import getDatabaseResults from '@/methods/notion/getDatabaseResults'
 import getName from '@/methods/notion/getName'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
 import getURLProperty from '@/methods/notion/getURLProperty'
@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 export default async function Page() {
   const client = getClient()
-  const results = await getDatabaseResults(
+  const results = await getCachedDatabaseResults(
     client,
     process.env.PACKAGE_DATABASE_ID as string
   )

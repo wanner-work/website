@@ -1,15 +1,11 @@
 import PageHeader from '@/components/header/PageHeader'
+import getCachedFilteredPage from '@/methods/notion/getCachedFilteredPage'
 import getClient from '@/methods/notion/getClient'
 import getName from '@/methods/notion/getName'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
-import {
-  PageObjectResponse,
-  QueryDatabaseResponse
-} from '@notionhq/client/build/src/api-endpoints'
 import Box from '@wanner.work/box'
-import Notion, { NotionQuery } from '@wanner.work/notion'
+import Notion from '@wanner.work/notion'
 import { getNotionImageURL } from '@wanner.work/notion/helper'
-import { notFound } from 'next/navigation'
 
 interface Props {
   params: {
@@ -19,25 +15,11 @@ interface Props {
 
 export default async function Page({ params: { slug } }: Props) {
   const client = getClient()
-  const request = (await client.databases.query({
-    database_id: process.env.PROJECT_DATABASE_ID as string,
-    filter: {
-      property: 'Slug',
-      rich_text: {
-        contains: slug
-      }
-    }
-  })) as QueryDatabaseResponse
-  const results = request.results as PageObjectResponse[]
-
-  if (results.length === 0 || results.length < 1) {
-    return notFound()
-  }
-
-  const page = results[0]
-
-  const query = new NotionQuery(client)
-  const data = await query.execute(page.id)
+  const { page, data } = await getCachedFilteredPage(
+    client,
+    process.env.PROJECT_DATABASE_ID as string,
+    slug
+  )
 
   return (
     <>
