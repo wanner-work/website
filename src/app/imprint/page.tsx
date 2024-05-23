@@ -1,24 +1,16 @@
 import PageHeader from '@/components/header/PageHeader'
+import getCachedPage from '@/methods/notion/getCachedPage'
 import getClient from '@/methods/notion/getClient'
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import Box from '@wanner.work/box'
-import Notion, { NotionQuery } from '@wanner.work/notion'
+import Notion from '@wanner.work/notion'
 import dayjs from 'dayjs'
-import { notFound } from 'next/navigation'
 
 export default async function Page() {
   const client = getClient()
-  const result = await client.pages.retrieve({
-    page_id: process.env.IMPRINT_PAGE_ID as string
-  })
-
-  if (!result) {
-    return notFound()
-  }
-
-  const page = result as PageObjectResponse
-  const query = new NotionQuery(client)
-  const data = await query.execute(page.id)
+  const { data, page } = await getCachedPage(
+    client,
+    process.env.IMPRINT_PAGE_ID as string
+  )
 
   return (
     <>
