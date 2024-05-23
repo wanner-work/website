@@ -1,4 +1,5 @@
 import PageHeader from '@/components/header/PageHeader'
+import NotionCode from '@/components/notion/NotionCode'
 import getCachedFilteredPage from '@/methods/notion/getCachedFilteredPage'
 import getClient from '@/methods/notion/getClient'
 import getName from '@/methods/notion/getName'
@@ -30,7 +31,15 @@ export default async function Page({ params: { slug } }: Props) {
       />
 
       <Box className="mx-auto text-white mt-28" width="content" px="small">
-        <Notion data={data} />
+        <Notion
+          data={data}
+          custom={[
+            {
+              type: 'code',
+              component: NotionCode
+            }
+          ]}
+        />
       </Box>
     </>
   )
