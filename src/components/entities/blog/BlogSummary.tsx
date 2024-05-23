@@ -1,5 +1,5 @@
+import getCachedDatabaseResults from '@/methods/notion/getCachedDatabaseResults'
 import getClient from '@/methods/notion/getClient'
-import getDatabaseResults from '@/methods/notion/getDatabaseResults'
 import getName from '@/methods/notion/getName'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
 import Box from '@wanner.work/box'
@@ -8,7 +8,7 @@ import { getNotionImageURL } from '@wanner.work/notion/helper'
 
 export default async function BlogSummary() {
   const client = getClient()
-  const results = await getDatabaseResults(
+  const results = await getCachedDatabaseResults(
     client,
     process.env.BLOG_DATABASE_ID as string
   )
