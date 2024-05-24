@@ -7,7 +7,7 @@ const getCachedFilteredPage = unstable_cache(
     getFilteredPage(client, databaseId, slug),
   ['filtered-page'],
   {
-    revalidate: 3600
+    revalidate: 3600 * 24 * 7
   }
 )
 
