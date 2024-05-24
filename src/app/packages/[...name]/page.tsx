@@ -29,5 +29,5 @@ export default async function Page({ params: { name } }: Props) {
     return notFound()
   }
 
-  return redirect(getURLProperty(results[0].properties, 'Readme'))
+  return redirect(getURLProperty(results[0].properties, 'Readme') || '')
 }

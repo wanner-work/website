@@ -4,21 +4,14 @@ import {
   QueryDatabaseResponse
 } from '@notionhq/client/build/src/api-endpoints'
 
-export default async function getDatabaseResults(client: Client, id: string) {
+export default async function getDatabaseResults(
+  client: Client,
+  id: string,
+  options?: any
+) {
   const request = (await client.databases.query({
     database_id: id,
-    sorts: [
-      {
-        property: 'Release',
-        direction: 'descending'
-      }
-    ],
-    filter: {
-      property: 'Release',
-      date: {
-        is_not_empty: true
-      }
-    }
+    ...options
   })) as QueryDatabaseResponse
   return request.results as PageObjectResponse[]
 }

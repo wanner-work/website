@@ -11,7 +11,21 @@ export default async function Page() {
   const client = getClient()
   const results = await getCachedDatabaseResults(
     client,
-    process.env.PROJECT_DATABASE_ID as string
+    process.env.PROJECT_DATABASE_ID as string,
+    {
+      sorts: [
+        {
+          property: 'Release',
+          direction: 'descending'
+        }
+      ],
+      filter: {
+        property: 'Release',
+        date: {
+          is_not_empty: true
+        }
+      }
+    }
   )
 
   return (
