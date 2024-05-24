@@ -15,13 +15,16 @@
     "@wanner.work/box": "^1.0.0",
     "@wanner.work/image": "^2.0.0",
     "@wanner.work/notion": "^1.0.0",
+    "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
     "framer-motion": "^11.2.4",
+    "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
     "party-js": "^2.2.0",
     "react": "^18",
     "react-dom": "^18",
-    "shiki": "^1.6.0"
+    "shiki": "^1.6.0",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
