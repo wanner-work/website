@@ -4,23 +4,15 @@ import Appear from '@/components/effects/Appear'
 import Box from '@wanner.work/box'
 import Image, { ImageProvider } from '@wanner.work/image'
 import dayjs from 'dayjs'
-import Link from 'next/link'
 
 interface Props {
   title: string
   description: string
   image?: string
   date?: string
-  link?: string
 }
 
-export default function PageHeader({
-  title,
-  description,
-  image,
-  date,
-  link
-}: Props) {
+export default function PageHeader({ title, description, image, date }: Props) {
   return (
     <Box
       className={`flex items-center justify-center flex-col ${image ? 'h-full' : 'h-[35vh] '}`}
@@ -41,17 +33,7 @@ export default function PageHeader({
       )}
 
       <Appear delay={0.3}>
-        {link ? (
-          <Link
-            href={link}
-            target="_blank"
-            className="relative w-full inline-block"
-          >
-            <h1 className="text-4xl font-bold text-white">{title}</h1>
-          </Link>
-        ) : (
-          <h1 className="text-4xl font-bold text-white">{title}</h1>
-        )}
+        <h1 className="text-4xl font-bold text-white">{title}</h1>
       </Appear>
       {date && (
         <Appear delay={0.4}>

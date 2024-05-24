@@ -48,7 +48,7 @@ export default async function Page() {
                   <Link
                     className="w-full"
                     target="_blank"
-                    href={getURLProperty(page.properties, 'Readme')}
+                    href={getURLProperty(page.properties, 'Readme') || ''}
                   >
                     <button className="bg-blue-500/10 uppercase text-blue-500 py-2 rounded w-full">
                       Readme
@@ -57,7 +57,7 @@ export default async function Page() {
                   <Link
                     className="w-full"
                     target="_blank"
-                    href={getURLProperty(page.properties, 'Changelog')}
+                    href={getURLProperty(page.properties, 'Changelog') || ''}
                   >
                     <button className="bg-purple-500/10 uppercase text-purple-500 py-2 rounded w-full">
                       Changelog
