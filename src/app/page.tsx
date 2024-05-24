@@ -2,6 +2,7 @@ import Appear from '@/components/effects/Appear'
 import Beautiful from '@/components/effects/Beautiful'
 import Fun from '@/components/effects/Fun'
 import Reveal from '@/components/effects/Reveal'
+import SimpleReveal from '@/components/effects/SimpleReveal'
 import ProjectSummary from '@/components/entities/projects/ProjectsSummary'
 import Box from '@wanner.work/box'
 import { Suspense } from 'react'
@@ -28,16 +29,18 @@ export default function Home() {
         </div>
       </Box>
 
-      <section>
-        <Box width="content" className="mx-auto text-white" px="medium">
-          <h2 className="text-4xl">Latest projects</h2>
-          <p className="mt-4 font-light italic opacity-70">
-            See what I have been up to recently.
-          </p>
-        </Box>
+      <SimpleReveal>
+        <section>
+          <Box width="content" className="mx-auto text-white" px="medium">
+            <h2 className="text-4xl">Latest projects</h2>
+            <p className="mt-4 font-light italic opacity-70">
+              See what I have been up to recently.
+            </p>
+          </Box>
 
-        <Suspense>{<ProjectSummary />}</Suspense>
-      </section>
+          <Suspense>{<ProjectSummary />}</Suspense>
+        </section>
+      </SimpleReveal>
       {/*<section className="mt-20">
         <Box width="content" className="mx-auto text-white" px="medium">
           <h2 className="text-4xl">Blog</h2>
