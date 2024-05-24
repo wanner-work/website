@@ -1,15 +1,16 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 
-export default function getURLProperty(
+export default function getDateProperty(
   properties: PageObjectResponse['properties'],
   name: string
 ) {
   if (properties[name]) {
     const property = properties[name]
-    if (property.type === 'url' && property.url) {
-      return new URL(property.url).toString()
+
+    if (property.type === 'date' && property?.date?.start) {
+      return property.date.start
     }
   }
 
-  return undefined
+  return 'error'
 }

@@ -3,14 +3,24 @@
 import Appear from '@/components/effects/Appear'
 import Box from '@wanner.work/box'
 import Image, { ImageProvider } from '@wanner.work/image'
+import dayjs from 'dayjs'
+import Link from 'next/link'
 
 interface Props {
   title: string
   description: string
   image?: string
+  date?: string
+  link?: string
 }
 
-export default function PageHeader({ title, description, image }: Props) {
+export default function PageHeader({
+  title,
+  description,
+  image,
+  date,
+  link
+}: Props) {
   return (
     <Box
       className={`flex items-center justify-center flex-col ${image ? 'h-full' : 'h-[35vh] '}`}
@@ -31,8 +41,25 @@ export default function PageHeader({ title, description, image }: Props) {
       )}
 
       <Appear delay={0.3}>
-        <h1 className="text-4xl font-bold text-white">{title}</h1>
+        {link ? (
+          <Link
+            href={link}
+            target="_blank"
+            className="relative w-full inline-block"
+          >
+            <h1 className="text-4xl font-bold text-white">{title}</h1>
+          </Link>
+        ) : (
+          <h1 className="text-4xl font-bold text-white">{title}</h1>
+        )}
       </Appear>
+      {date && (
+        <Appear delay={0.4}>
+          <p className="text-white mt-2 opacity-80 text-sm">
+            {dayjs(date).format('MMMM D, YYYY')}
+          </p>
+        </Appear>
+      )}
       <Appear rotate={0} delay={0.8} duration={0.5}>
         <p className="mt-8 text-white opacity-70 max-w-[550px] text-center">
           {description}

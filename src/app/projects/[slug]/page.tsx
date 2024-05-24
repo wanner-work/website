@@ -1,11 +1,12 @@
 import PageHeader from '@/components/header/PageHeader'
-import NotionCode from '@/components/notion/NotionCode'
+import CustomNotion from '@/components/notion/CustomNotion'
 import getCachedFilteredPage from '@/methods/notion/getCachedFilteredPage'
 import getClient from '@/methods/notion/getClient'
+import getDateProperty from '@/methods/notion/getDateProperty'
 import getName from '@/methods/notion/getName'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
+import getURLProperty from '@/methods/notion/getURLProperty'
 import Box from '@wanner.work/box'
-import Notion from '@wanner.work/notion'
 import { getNotionImageURL } from '@wanner.work/notion/helper'
 
 interface Props {
@@ -26,20 +27,14 @@ export default async function Page({ params: { slug } }: Props) {
     <>
       <PageHeader
         title={getName(page.properties)}
+        date={getDateProperty(page.properties, 'Release')}
         description={getPlainProperty(page.properties, 'Summary')}
         image={getNotionImageURL(page.cover)}
+        link={getURLProperty(page.properties, 'URL') || undefined}
       />
 
       <Box className="mx-auto text-white mt-28" width="content" px="small">
-        <Notion
-          data={data}
-          custom={[
-            {
-              type: 'code',
-              component: NotionCode
-            }
-          ]}
-        />
+        <CustomNotion data={data} />
       </Box>
     </>
   )

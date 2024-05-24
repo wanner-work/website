@@ -13,12 +13,19 @@ export default async function ProjectSummary() {
   )
 
   return (
-    <Box px="medium" className="mt-8 grid md:grid-cols-3 gap-3">
-      {results.map((page) => (
-        <Link href={`/projects/${getPlainProperty(page.properties, 'Slug')}`}>
-          <ProjectPreview page={page} />
-        </Link>
-      ))}
+    <Box px="medium" width="content" className="mt-8 mx-auto">
+      <Link
+        href={`/projects/${getPlainProperty(results[0].properties, 'Slug')}`}
+      >
+        <ProjectPreview page={results[0]} height={400} />
+      </Link>
+      <div className="grid md:grid-cols-2 gap-7 mt-7">
+        {results.slice(1, 3).map((page, index) => (
+          <Link href={`/projects/${getPlainProperty(page.properties, 'Slug')}`}>
+            <ProjectPreview page={page} />
+          </Link>
+        ))}
+      </div>
     </Box>
   )
 }
