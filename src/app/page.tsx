@@ -2,7 +2,6 @@ import Appear from '@/components/effects/Appear'
 import Beautiful from '@/components/effects/Beautiful'
 import Fun from '@/components/effects/Fun'
 import Reveal from '@/components/effects/Reveal'
-import BlogSummary from '@/components/entities/blog/BlogSummary'
 import ProjectSummary from '@/components/entities/projects/ProjectsSummary'
 import Box from '@wanner.work/box'
 import { Suspense } from 'react'
@@ -37,9 +36,9 @@ export default function Home() {
           </p>
         </Box>
 
-        <Suspense fallback="loading...">{<ProjectSummary />}</Suspense>
+        <Suspense>{<ProjectSummary />}</Suspense>
       </section>
-      <section className="mt-20">
+      {/*<section className="mt-20">
         <Box width="content" className="mx-auto text-white" px="medium">
           <h2 className="text-4xl">Blog</h2>
           <p className="mt-4 font-light italic opacity-70">
@@ -49,7 +48,7 @@ export default function Home() {
         </Box>
 
         <Suspense fallback="loading...">{<BlogSummary />}</Suspense>
-      </section>
+      </section>*/}
     </main>
   )
 }

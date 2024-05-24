@@ -27,11 +27,6 @@ export default function Header() {
             </Link>
           </Appear>
           <Appear rotate={-8} scale={0.8} delay={0.7}>
-            <Link href={'/blog'}>
-              <button className="text-white">Blog</button>
-            </Link>
-          </Appear>
-          <Appear rotate={-8} scale={0.8} delay={0.9}>
             <Link href={'/packages'}>
               <button className="text-white">Packages</button>
             </Link>
