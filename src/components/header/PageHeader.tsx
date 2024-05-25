@@ -34,7 +34,7 @@ export default function PageHeader({ title, description, image, date }: Props) {
       )}
 
       <Appear delay={0.3}>
-        <h1 className="text-4xl font-bold text-white">{title}</h1>
+        <h1 className="text-4xl font-bold text-white z-20 relative">{title}</h1>
       </Appear>
       {date && (
         <Appear delay={0.4}>
