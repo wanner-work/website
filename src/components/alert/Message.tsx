@@ -15,7 +15,9 @@ export default function Message() {
     const action = searchParams.get('action')
 
     if (action === 'revalidated') {
-      toast.success(`Revalidated ${searchParams.get('tag')} successful.`)
+      toast.success(
+        `Revalidated ${searchParams.get('tag') || searchParams.get('path')} successful.`
+      )
     }
 
     once = true
