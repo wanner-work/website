@@ -7,7 +7,6 @@ const getCachedDatabaseResults = unstable_cache(
     getDatabaseResults(client, id, options),
   ['database-results'],
   {
-    revalidate: 3600 * 24 * 7,
     tags: ['database-results']
   }
 )
