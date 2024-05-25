@@ -5,7 +5,8 @@ const getCachedPage = unstable_cache(
   async (client: any, pageId: string) => getPage(client, pageId),
   ['page'],
   {
-    revalidate: 3600 * 24 * 7
+    revalidate: 3600 * 24 * 7,
+    tags: ['page']
   }
 )
 
