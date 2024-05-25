@@ -1,4 +1,5 @@
 import Logo from '@/components/icons/Logo'
+import Revalidate from '@/components/utils/Revalidate'
 import Box from '@wanner.work/box'
 import Link from 'next/link'
 import SimpleReveal from '../effects/SimpleReveal'
@@ -39,6 +40,7 @@ export default function Footer() {
             <Link className="underline" href="/privacy">
               Privacy Policy
             </Link>
+            <Revalidate />
             <Link className="underline" href="mailto:jonas@wanner.com">
               Contact
             </Link>
