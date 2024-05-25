@@ -34,7 +34,7 @@ export default function Fun({}: Props) {
     <span className="cursor-pointer select-none" ref={ref}>
       <AnimatePresence>
         <motion.span
-          className="bg-fun-gradient bg-clip-text text-transparent inline-block font-bold"
+          className="inline-block bg-fun-gradient bg-clip-text font-bold text-transparent"
           initial={{
             opacity: 0,
             scale: 0.5,

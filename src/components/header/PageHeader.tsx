@@ -15,12 +15,12 @@ interface Props {
 export default function PageHeader({ title, description, image, date }: Props) {
   return (
     <Box
-      className={`flex items-center justify-center flex-col ${image ? 'h-full' : 'h-[35vh] '}  w-full bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center`}
+      className={`flex flex-col items-center justify-center ${image ? 'h-full' : 'h-[35vh] '}  relative flex w-full items-center justify-center bg-dot-white/[0.2]`}
       px="small"
     >
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       {image && (
-        <div className="max-w-[1100px] w-full mx-auto h-[60vh] mt-14 md:mt-10 mb-20">
+        <div className="mx-auto mb-20 mt-14 h-[60vh] w-full max-w-[1100px] md:mt-10">
           <ImageProvider
             cache={{
               enabled: true,
@@ -34,17 +34,17 @@ export default function PageHeader({ title, description, image, date }: Props) {
       )}
 
       <Appear delay={0.3}>
-        <h1 className="text-4xl font-bold text-white z-20 relative">{title}</h1>
+        <h1 className="relative z-20 text-4xl font-bold text-white">{title}</h1>
       </Appear>
       {date && (
         <Appear delay={0.4}>
-          <p className="text-white mt-2 opacity-80 text-sm">
+          <p className="mt-2 text-sm text-white opacity-80">
             {dayjs(date).format('MMMM D, YYYY')}
           </p>
         </Appear>
       )}
       <Appear rotate={0} delay={0.8} duration={0.5}>
-        <p className="mt-8 text-white opacity-70 max-w-[550px] text-center">
+        <p className="mt-8 max-w-[550px] text-center text-white opacity-70">
           {description}
         </p>
       </Appear>

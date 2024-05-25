@@ -13,7 +13,7 @@ export default function Reveal({ children }: Props) {
       <div className="relative">
         <span>{children}</span>
         <motion.span
-          className="h-full w-full absolute bottom-0 right-0 z-10 bg-black blur-lg scale-[200%]"
+          className="absolute bottom-0 right-0 z-10 h-full w-full scale-[200%] bg-black blur-lg"
           animate={{
             width: 0
           }}
@@ -22,7 +22,7 @@ export default function Reveal({ children }: Props) {
           }}
         />
         <motion.span
-          className="h-full w-full absolute bottom-0 right-0 z-20 backdrop-blur-2xl blur-lg scale-[200%]"
+          className="absolute bottom-0 right-0 z-20 h-full w-full scale-[200%] blur-lg backdrop-blur-2xl"
           animate={{
             width: 0
           }}
