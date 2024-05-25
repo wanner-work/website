@@ -9,7 +9,7 @@ export default function NotionImage({ block }: Props) {
   const src = getNotionImageURL(block.image)
 
   return (
-    <div className="h-[450px] md:-mx-[55px] md:w-[100%+110px] my-12 relative">
+    <div className="relative my-12 h-[450px] md:-mx-[67px] md:w-[100%+134px]">
       <Image src={src} alt="deger" fill loading="lazy" />
     </div>
   )

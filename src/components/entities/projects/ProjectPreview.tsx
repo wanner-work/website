@@ -31,15 +31,15 @@ export default function ProjectPreview({ page, height = 300 }: Props) {
       >
         <Image src={getNotionImageURL(page.cover)} fill alt="test" />
       </ImageProvider>
-      <div className="bg-gradient-to-tr from-black to-black/40 absolute top-0 left-0 h-full w-full z-10 flex items-end text-white">
+      <div className="absolute left-0 top-0 z-10 flex h-full w-full items-end bg-gradient-to-tr from-black to-black/40 text-white">
         <div className="p-8">
-          <p className="text-sm opacity-70 mb-2 italic">
+          <p className="mb-2 text-sm italic opacity-70">
             {dayjs(getDateProperty(page.properties, 'Release')).format(
               'MMMM D, YYYY'
             )}
           </p>
           <h3 className="text-xl">{getName(page.properties)}</h3>
-          <p className="opacity-80 mt-2 max-w-[400px]">
+          <p className="mt-2 max-w-[400px] opacity-80">
             {getPlainProperty(page.properties, 'Summary')}
           </p>
         </div>

@@ -12,7 +12,6 @@ import {
   ArrowTopRightOnSquareIcon,
   LockClosedIcon
 } from '@heroicons/react/24/solid'
-import Box from '@wanner.work/box'
 import { getNotionImageURL } from '@wanner.work/notion/helper'
 import Link from 'next/link'
 
@@ -53,30 +52,28 @@ export default async function Page({ params: { slug } }: Props) {
         image={getNotionImageURL(page.cover)}
       />
 
-      <div className="w-full flex justify-center mt-20">
+      <div className="mt-20 flex w-full justify-center">
         <Appear delay={0.9}>
           {getURLProperty(page.properties, 'URL') ? (
             <Link
               href={getURLProperty(page.properties, 'URL') || ''}
               target="_blank"
             >
-              <button className="bg-white/5 text-white p-3 rounded text-sm flex items-center gap-3 w-auto cursor-pointer hover:scale-105 active:scale-95 transition">
+              <button className="flex w-auto cursor-pointer items-center gap-3 rounded bg-white/5 p-3 text-sm text-white transition hover:scale-105 active:scale-95">
                 Visit Project
-                <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
               </button>
             </Link>
           ) : (
-            <div className="bg-white/5 text-white p-3 rounded text-sm flex items-center gap-3 w-auto">
+            <div className="flex w-auto items-center gap-3 rounded bg-white/5 p-3 text-sm text-white">
               Private Project
-              <LockClosedIcon className="w-4 h-4" />
+              <LockClosedIcon className="h-4 w-4" />
             </div>
           )}
         </Appear>
       </div>
 
-      <Box className="mx-auto text-white mt-28" width="content" px="small">
-        <CustomNotion data={data} />
-      </Box>
+      <CustomNotion data={data} />
     </>
   )
 }

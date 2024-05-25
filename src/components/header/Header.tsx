@@ -9,8 +9,10 @@ export default function Header() {
   return (
     <header className="">
       <Box
-        className="mx-auto max-w-[850px] flex justify-between items-center flex-col md:flex-row"
-        px="small"
+        width="medium"
+        align="center"
+        className="flex flex-col items-center justify-between md:flex-row"
+        px="medium"
       >
         <Appear rotate={-8} scale={0.8}>
           <Link href={'/'}>
@@ -20,7 +22,7 @@ export default function Header() {
           </Link>
         </Appear>
 
-        <div className="flex gap-4 md:gap-8 font-light mt-2 md:mt-0">
+        <div className="mt-2 flex gap-4 font-light md:mt-0 md:gap-8">
           <Appear rotate={-8} scale={0.8} delay={0.5}>
             <Link href={'/projects'}>
               <button className="text-white">Projects</button>

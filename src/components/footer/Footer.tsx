@@ -8,14 +8,16 @@ export default function Footer() {
     <SimpleReveal>
       <footer>
         <Box
-          className="mx-auto max-w-[850px] text-white text-sm mt-32 mb-4 md:mb-10"
-          px="small"
+          width="medium"
+          align="center"
+          className="mb-6 mt-32 text-sm text-white md:mb-10"
+          px="medium"
         >
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <span className="opacity-80">Copyright © 2024</span>
-            <span className="flex gap-3 items-center">
+            <span className="flex items-center gap-3">
               <span className="opacity-80">
-                <span className="translate-y-0.5 -translate-x-5 absolute">
+                <span className="absolute -translate-x-5 translate-y-0.5">
                   🇨🇭
                 </span>
                 wanner.work
@@ -23,14 +25,14 @@ export default function Footer() {
               <Logo size={50} />
             </span>
           </div>
-          <div className="opacity-80 mt-3">
+          <div className="mt-3 opacity-80">
             <p>
               This page is owned and operated by Jonas Wanner under the name{' '}
               <span className="italic">wanner.work</span> and is a showcase of
               his work and projects.
             </p>
           </div>
-          <div className="opacity-80 mt-6 flex justify-between">
+          <div className="mt-6 flex justify-between opacity-80">
             <Link className="underline" href="/imprint">
               Imprint
             </Link>

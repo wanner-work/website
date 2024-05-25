@@ -44,7 +44,7 @@ export default function Copy({ content }: Props) {
           </motion.div>
         ) : (
           <button
-            className="hover:scale-90 hover:opacity-80 transition"
+            className="transition hover:scale-90 hover:opacity-80"
             onClick={copy}
           >
             <ClipboardIcon className="h-5 w-5" />

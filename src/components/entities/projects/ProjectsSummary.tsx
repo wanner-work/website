@@ -2,7 +2,6 @@ import ProjectPreview from '@/components/entities/projects/ProjectPreview'
 import getCachedDatabaseResults from '@/methods/notion/getCachedDatabaseResults'
 import getClient from '@/methods/notion/getClient'
 import getPlainProperty from '@/methods/notion/getPlainProperty'
-import Box from '@wanner.work/box'
 import Link from 'next/link'
 
 export default async function ProjectSummary() {
@@ -27,19 +26,19 @@ export default async function ProjectSummary() {
   )
 
   return (
-    <Box px="medium" width="content" className="mt-8 mx-auto">
+    <>
       <Link
         href={`/projects/${getPlainProperty(results[0].properties, 'Slug')}`}
       >
         <ProjectPreview page={results[0]} height={400} />
       </Link>
-      <div className="grid md:grid-cols-2 gap-7 mt-7">
+      <div className="mt-7 grid gap-7 md:grid-cols-2">
         {results.slice(1, 3).map((page, index) => (
           <Link href={`/projects/${getPlainProperty(page.properties, 'Slug')}`}>
             <ProjectPreview page={page} />
           </Link>
         ))}
       </div>
-    </Box>
+    </>
   )
 }

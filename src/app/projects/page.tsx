@@ -36,13 +36,13 @@ export default async function Page() {
       />
 
       <SimpleReveal>
-        <Box px="medium" width="content" className="mt-8 mx-auto">
+        <Box px="medium" width="medium" align="center" className="mt-8">
           <Link
             href={`/projects/${getPlainProperty(results[0].properties, 'Slug')}`}
           >
             <ProjectPreview page={results[0]} height={500} />
           </Link>
-          <div className="grid md:grid-cols-2 gap-7 mt-7">
+          <div className="mt-7 grid gap-7 md:grid-cols-2">
             {results.slice(1).map((page, index) => (
               <Link
                 href={`/projects/${getPlainProperty(page.properties, 'Slug')}`}
