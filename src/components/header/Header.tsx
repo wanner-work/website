@@ -11,13 +11,16 @@ export default function Header() {
       <Box
         width="medium"
         align="center"
-        className="flex flex-col items-center justify-between md:flex-row"
+        className="flex items-center justify-between py-4 md:py-8"
         px="medium"
       >
         <Appear rotate={-8} scale={0.8}>
           <Link href={'/'}>
-            <div className="pt-5 md:pt-0">
-              <Logo size={100} />
+            <div className="md:hidden">
+              <Logo size={40} />
+            </div>
+            <div className="hidden md:block">
+              <Logo size={60} />
             </div>
           </Link>
         </Appear>
