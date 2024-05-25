@@ -49,7 +49,9 @@ export default function Home() {
         </section>
       </SimpleReveal>
 
-      <Message />
+      <Suspense>
+        <Message />
+      </Suspense>
     </>
   )
 }
