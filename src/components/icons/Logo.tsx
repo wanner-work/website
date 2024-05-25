@@ -7,9 +7,8 @@ export default function Logo({ size }: Props) {
     <svg
       version="1.2"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 3750 3750"
+      viewBox="0 0 2248 1346"
       width={size || 200}
-      height={size || 200}
     >
       <title>wanner.work - logo</title>
       <defs>
@@ -21,7 +20,7 @@ export default function Logo({ size }: Props) {
         />
       </defs>
       <style></style>
-      <use id="Background" href="#img1" x="751" y="1200" />
+      <use id="Background" href="#img1" x="0" y="0" />
     </svg>
   )
 }

@@ -11,7 +11,7 @@ import { Suspense } from 'react'
 export default function Home() {
   return (
     <>
-      <main className="overflow-hidden">
+      <main className="mt-16 overflow-hidden md:mt-0">
         <Box
           width="large"
           align="center"
