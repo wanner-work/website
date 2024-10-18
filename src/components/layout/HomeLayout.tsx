@@ -1,7 +1,12 @@
+'use client'
+
+import Crafts from '@/components/crafts/Crafts'
 import Header from '@/components/header/Header'
 import Box from '@wanner.work/box'
 
-export default function Page() {
+interface Props {}
+
+export default function HomeLayout({}: Props) {
   return (
     <Box width="full" align="center">
       <div className="fixed left-0 top-0 w-full">
@@ -9,6 +14,10 @@ export default function Page() {
           <Header />
         </Box>
       </div>
+
+      <Box className="mt-80">
+        <Crafts />
+      </Box>
     </Box>
   )
 }
