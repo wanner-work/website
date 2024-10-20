@@ -1,5 +1,6 @@
 import DatepickerCraft from '@/crafts/datepicker/components/DatepickerCraft'
 import InboxCraft from '@/crafts/inbox/components/InboxCraft'
+import PickerCraft from '@/crafts/picker/components/PickerCraft'
 import Box from '@wanner.work/box'
 import Logo from '../../../docs/Logo'
 
@@ -11,6 +12,7 @@ export default function Page() {
           <Logo size={40} />
         </div>
 
+        <PickerCraft />
         <DatepickerCraft />
         <InboxCraft />
       </Box>

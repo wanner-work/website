@@ -14,10 +14,12 @@ const config: Config = {
         light: '#D9D9D1'
       },
       height: {
-        craft: '300px'
+        craft: '300px',
+        year: '200px',
+        0.25: '1px'
       },
       width: {
-        picker: '400px'
+        picker: '300px'
       },
       gap: {
         0.25: '1px'

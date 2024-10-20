@@ -93,11 +93,11 @@ export default function InboxItem({ index, onClosed }: Props) {
           style={{ x: xMotionValue }}
           className="mb-0.25 bg-dark p-4"
         >
-          <div className="mb-1 flex items-center justify-between gap-3">
-            <p className="truncate lowercase text-light">{title}</p>
-            <p className="truncate text-sm text-light/70">{date}</p>
+          <div className="mb-0.25 flex items-center justify-between gap-3">
+            <p className="truncate text-sm lowercase text-light">{title}</p>
+            <p className="truncate text-[12px] text-light/70">{date}</p>
           </div>
-          <p className="text-sm lowercase text-light/70">{description}</p>
+          <p className="text-[12px] lowercase text-light/70">{description}</p>
         </motion.div>
       </motion.div>
     </motion.div>
