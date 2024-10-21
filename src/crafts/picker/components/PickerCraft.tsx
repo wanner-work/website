@@ -7,7 +7,7 @@ export default function PickerCraft() {
   return (
     <CraftContainer
       title="a pretty picker"
-      description="A picker that is pretty and works well on mobile and desktop because most of them are whack."
+      description="A picker like on ios which works well on mobile and desktop."
     >
       <Picker />
     </CraftContainer>

@@ -47,6 +47,9 @@ importers:
       react-mobile-picker:
         specifier: ^1.0.1
         version: 1.0.1(react-dom@19.0.0-rc-77b637d6-20241016(react@19.0.0-rc-77b637d6-20241016))(react@19.0.0-rc-77b637d6-20241016)
+      react-use-draggable-scroll:
+        specifier: ^0.4.7
+        version: 0.4.7(react@19.0.0-rc-77b637d6-20241016)
       react-window:
         specifier: ^1.8.10
         version: 1.8.10(react-dom@19.0.0-rc-77b637d6-20241016(react@19.0.0-rc-77b637d6-20241016))(react@19.0.0-rc-77b637d6-20241016)
@@ -758,6 +761,12 @@ packages:
       react: ^16 || ^17 || ^18
       react-dom: ^16 || ^17 || ^18
 
+  react-use-draggable-scroll@0.4.7:
+    resolution: {integrity: sha512-6gCxGPO9WV5dIsBaDrgUKBaac8CY07PkygcArfajijYSNDwAq0girDRjaBuF1+lRqQryoLFQfpVaV2u/Yh6CrQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+
   react-window@1.8.10:
     resolution: {integrity: sha512-Y0Cx+dnU6NLa5/EvoHukUD0BklJ8qITCtVEPY1C/nL8wwoZ0b5aEw8Ff1dOVHw7fCzMt55XfJDd8S8W8LCaUCg==}
     engines: {node: '>8.0.0'}
@@ -1448,6 +1457,10 @@ snapshots:
     dependencies:
       react: 19.0.0-rc-77b637d6-20241016
       react-dom: 19.0.0-rc-77b637d6-20241016(react@19.0.0-rc-77b637d6-20241016)
+
+  react-use-draggable-scroll@0.4.7(react@19.0.0-rc-77b637d6-20241016):
+    dependencies:
+      react: 19.0.0-rc-77b637d6-20241016
 
   react-window@1.8.10(react-dom@19.0.0-rc-77b637d6-20241016(react@19.0.0-rc-77b637d6-20241016))(react@19.0.0-rc-77b637d6-20241016):
     dependencies:
