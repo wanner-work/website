@@ -1,4 +1,4 @@
-![website.](docs/lead.svg)
+![website.](lead.svg)
 
 # website.
 
