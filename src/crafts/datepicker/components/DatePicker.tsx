@@ -1,4 +1,5 @@
 import PickerDayView from '@/crafts/datepicker/components/day/PickerDayView'
+import PickerMonthView from '@/crafts/datepicker/components/month/PickerMonthView'
 import PickerYearView from '@/crafts/datepicker/components/year/PickerYearView'
 import PickerDayData from '@/crafts/datepicker/interfaces/PickerDayData'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
@@ -78,7 +79,7 @@ export default function DatePicker({}: Props) {
   }, [month, year])
 
   return (
-    <div className="w-picker m-auto rounded-lg bg-dark p-2">
+    <div className="m-auto w-picker rounded-lg bg-dark p-2">
       <div className="mb-2 flex items-center justify-between px-2 py-2">
         <p className="select-none font-bold text-light">
           <span onClick={() => setView('month')}>
@@ -103,6 +104,16 @@ export default function DatePicker({}: Props) {
       </div>
       {view === 'day' && (
         <PickerDayView
+          month={month}
+          year={year}
+          days={days}
+          onDateSelect={handleDateSelect}
+          onMonthSelect={handleMonthSelect}
+          onYearSelect={handleYearSelect}
+        />
+      )}
+      {view === 'month' && (
+        <PickerMonthView
           month={month}
           year={year}
           days={days}

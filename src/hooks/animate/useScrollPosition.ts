@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
-import {useScroll} from 'framer-motion'
+import { useScroll } from 'motion/react'
+import { useEffect, useState } from 'react'
 
-export default function useScrollPosition ()  {
+export default function useScrollPosition() {
   const [y, setY] = useState(0)
 
   const { scrollY } = useScroll()

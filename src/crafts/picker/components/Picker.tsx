@@ -1,12 +1,18 @@
-'use client'
-
 import PICKER from '@/crafts/picker/constants/PICKER'
 import clsx from 'clsx'
-import { motion, useScroll } from 'framer-motion'
+import { motion, useScroll } from 'motion/react'
 import { MutableRefObject, useEffect, useRef, useState } from 'react'
 import { useDraggable } from 'react-use-draggable-scroll'
 
-export default function Picker() {
+interface Props {
+  onChange: (value: number | string | undefined) => void
+  options: {
+    key: string | number
+    value: any
+  }[]
+}
+
+export default function Picker({ onChange, options }: Props) {
   const ref = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>
 
   const { events } = useDraggable(ref, {
@@ -14,6 +20,12 @@ export default function Picker() {
   })
 
   const [selected, setSelected] = useState<number | undefined>(undefined)
+
+  useEffect(() => {
+    if (selected) {
+      onChange(options[selected].value)
+    }
+  }, [selected])
 
   const { scrollY } = useScroll({ container: ref })
 
@@ -43,37 +55,13 @@ export default function Picker() {
     })
   }
 
-  const handleSnap = () => {
-    if (ref.current) {
-      const y = scrollY.get() - (60 - 15)
-      const height = ref.current.clientHeight
-      const index = Math.round(
-        (y + height / 2 - PICKER.itemHeight / 2) / PICKER.itemHeight
-      )
-      ref.current.scrollTo({
-        top: index * PICKER.itemHeight - ref.current.clientHeight / 2,
-        behavior: 'smooth'
-      })
-
-      requestAnimationFrame(() => {
-        ref.current.addEventListener(
-          'scrollend',
-          () => {
-            handlePosition()
-          },
-          { once: true }
-        )
-      })
-    }
-  }
-
   return (
     <div className="flex h-full w-full items-center justify-center">
       <div className="relative w-full overflow-hidden rounded-lg">
         <div className="absolute left-0 top-0 z-10 h-5 w-full bg-gradient-to-b from-dark to-transparent" />
         <div className="absolute bottom-0 left-0 z-10 h-5 w-full bg-gradient-to-t from-dark to-transparent" />
         <div
-          className="lex scrollbar-hide flex-col items-center overflow-y-scroll rounded-lg bg-dark shadow-lg"
+          className="scrollbar-hidden flex-col items-center overflow-y-scroll rounded-lg bg-dark shadow-lg"
           style={{
             height: '120px',
             paddingTop: 'calc(60px - 15px)',
@@ -82,24 +70,22 @@ export default function Picker() {
           ref={ref}
           {...events}
         >
-          {Array(100)
-            .fill(0)
-            .map((_, i) => (
-              <motion.div
-                key={i}
-                style={{
-                  height: PICKER.itemHeight
-                }}
-                className={clsx(
-                  'flex scale-90 cursor-pointer select-none items-center justify-center rounded-lg transition',
-                  selected === i
-                    ? 'font-bold text-light'
-                    : 'font-light text-light/70'
-                )}
-              >
-                {i}
-              </motion.div>
-            ))}
+          {options.map((option, index) => (
+            <motion.div
+              key={option.key}
+              style={{
+                height: PICKER.itemHeight
+              }}
+              className={clsx(
+                'flex cursor-pointer select-none items-center justify-center rounded-lg text-sm transition',
+                selected === index
+                  ? 'font-bold text-light'
+                  : 'font-light text-light/70'
+              )}
+            >
+              {option.value}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
