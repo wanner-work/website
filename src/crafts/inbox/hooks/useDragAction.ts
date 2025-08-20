@@ -1,5 +1,5 @@
 import ANIMATION from '@/crafts/inbox/constants/ANIMATION'
-import { useMotionValue } from 'framer-motion'
+import { useMotionValue } from 'motion/react'
 import { useEffect, useState } from 'react'
 
 interface Options {

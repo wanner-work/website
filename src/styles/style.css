@@ -7,3 +7,12 @@
     text-wrap: balance;
   }
 }
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.noise {
+  background-image: url('/noise.png');
+}

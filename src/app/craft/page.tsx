@@ -2,7 +2,7 @@ import DatepickerCraft from '@/crafts/datepicker/components/DatepickerCraft'
 import InboxCraft from '@/crafts/inbox/components/InboxCraft'
 import PickerCraft from '@/crafts/picker/components/PickerCraft'
 import Box from '@wanner.work/box'
-import Logo from '../../../docs/Logo'
+import Logo from '../../components/core/Logo'
 
 export default function Page() {
   return (

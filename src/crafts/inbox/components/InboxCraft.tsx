@@ -2,7 +2,7 @@
 
 import CraftContainer from '@/components/crafts/CraftContainer'
 import InboxItem from '@/crafts/inbox/components/InboxItem'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 import { useEffect, useState } from 'react'
 
 export default function InboxCraft() {
