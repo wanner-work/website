@@ -1,0 +1,8 @@
+---
+import {getCollection} from "astro:content";
+import Page from '../components/layout/Page';
+const projects = await getCollection('projects');
+---
+<Page title="Projects" description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte.">
+
+</Page>
