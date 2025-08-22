@@ -1,6 +1,7 @@
 ---
-import '../styles/global.css'
 import {getCollection} from "astro:content";
+import Layout from '../layouts/Layout.astro'
+import Page from '../components/layout/Page'
 
 const projects = await getCollection('projects');
 
@@ -8,21 +9,10 @@ const someProps = {
 	count: 0,
 	projects
 };
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	</head>
-	<body>
-		<Layout title="Astro Starter Kit">
-			hello world§
-		</Layout>
-	</body>
-</html>
+<Layout title="Astro Starter Kit">
+	<Page title="Hey, ich bin Jonas.">
+		hello world
+	</Page>
+</Layout>

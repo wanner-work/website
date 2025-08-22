@@ -1,8 +1,22 @@
 ---
 import {getCollection} from "astro:content";
 import Page from '../components/layout/Page';
+import ProjectOverview from '../components/projects/ProjectOverview';
+import Layout from "../layouts/Layout.astro";
 const projects = await getCollection('projects');
 ---
-<Page title="Projects" description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte.">
 
-</Page>
+<Layout title="Projekte">
+    <Page title="Projekte" description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte.">
+            <div>
+                {projects.map(project => (
+                    <ProjectOverview
+                        id={project.id}
+                        image={project.data.image}
+                        description={project.data.description}
+                        link={project.data.link}
+                    />
+                ))} 
+            </div>
+    </Page>
+</Layout>
