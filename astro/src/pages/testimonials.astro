@@ -1,0 +1,24 @@
+---
+import {getCollection} from "astro:content";
+import Page from '../components/layout/Page';
+import Layout from "../layouts/Layout.astro";
+import TestimonialOverview from "../components/testimonials/TestimonialOverview";
+
+const testimonials = await getCollection('testimonials');
+---
+
+<Layout title="Referenzen">
+    <Page title="Referenzen" description="Stimmen von Personen, mit welchen ich in der Vergangenheit gearbeitet habe.">
+            <div class="flex flex-col gap-12">
+                {testimonials.map(testimonial => (
+                    <TestimonialOverview
+                        name={testimonial.data.name}
+                        picture={testimonial.data.picture}
+                        company={testimonial.data.company}
+                        companyLink={testimonial.data.companyLink}
+                        html={testimonial.rendered?.html || ""}
+                    />
+                ))}
+            </div>
+    </Page>
+</Layout>
