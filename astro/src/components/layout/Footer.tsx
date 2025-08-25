@@ -1,5 +1,5 @@
 import Box from '@wanner.work/box'
-import Logo2 from '../brand/Logo2'
+import Logo2 from '../brand/Logo'
 
 export default function Footer() {
   return (

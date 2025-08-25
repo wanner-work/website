@@ -1,21 +1,24 @@
 ---
-import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Page from '../components/layout/Page'
-import Box from '@wanner.work/box'
-import Logo from '../components/brand/Logo2'
-import getFadeOverlay from '../methods/getFadeOverlay'
-import getTextFadeClassName from '../methods/getTextFadeString'
+import Header from '../components/home/Header'
+import Skills from '../components/home/Skills'
+import Testimonials from '../components/home/Testimonials'
 
 import * as content from '../data/home/home.md'
-import Header from '../components/home/Header'
+import * as testimonial from '../data/testimonials/jannik.md'
 ---
 
-<Layout title="Astro Starter Kit">
+<Layout title="Portfolio">
   <Header
     title={content.frontmatter.title}
     subtitle={content.frontmatter.subtitle}
     client:load
   />
-  <Page />
+  <Page>
+    <Skills client:visible />
+    <Testimonials {...testimonial.frontmatter} client:visible>
+      <testimonial.Content />
+    </Testimonials>
+  </Page>
 </Layout>

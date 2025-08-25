@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write .",
+    "svgr": "svgr --typescript --no-index --icon 4em --replace-attr-values '#E8DFCB'='currentColor' --out-dir src/components/icons icons",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,12 +22,14 @@
     "astro": "^5.13.2",
     "gsap": "^3.13.0",
     "lucide-react": "^0.540.0",
+    "motion": "^12.23.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
+    "@svgr/cli": "^8.1.0",
     "@tailwindcss/typography": "^0.5.16",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",

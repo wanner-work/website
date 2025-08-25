@@ -2,7 +2,7 @@ import Box from '@wanner.work/box'
 import { type PropsWithChildren } from 'react'
 import getFadeOverlay from '../../methods/getFadeOverlay'
 import getTextFadeClassName from '../../methods/getTextFadeString'
-import Logo from '../brand/Logo2'
+import Logo from '../brand/Logo'
 
 interface Props {
   title?: string

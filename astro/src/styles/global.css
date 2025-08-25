@@ -12,3 +12,9 @@
   --spacing-small: 500px;
   --spacing-large: 700px;
 }
+
+a:focus-visible {
+  outline-offset: 2px;
+  outline-width: 3px;
+  outline-color: #2b2927;
+}

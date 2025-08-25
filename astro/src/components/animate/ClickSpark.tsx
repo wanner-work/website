@@ -43,8 +43,7 @@ export default function ClickSpark({
     const canvas = canvasRef.current
     if (!canvas) return
 
-    const parent = canvas.parentElement
-    if (!parent) return
+    const parent = document.body
 
     let resizeTimeout: NodeJS.Timeout
 
@@ -167,6 +166,9 @@ export default function ClickSpark({
   }
 
   return (
-    <canvas ref={canvasRef} className="pointer-events-none absolute inset-0" />
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none absolute inset-0 z-10"
+    />
   )
 }

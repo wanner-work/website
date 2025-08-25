@@ -1,9 +1,11 @@
+import type { PropsWithChildren } from "react"
+
 interface Props {
   name: string
   picture?: string
   company: string
   companyLink?: string
-  html: string
+  html?: string
 }
 
 export default function TestimonialOverview({
@@ -11,14 +13,20 @@ export default function TestimonialOverview({
   picture,
   company,
   companyLink,
-  html
-}: Props) {
+  html,
+  children
+}: PropsWithChildren<Props>) {
   return (
-    <div>
-      <div
+    <div className="relative z-20">
+      {html ? <div
         className="mb-3 text-lg"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></div>
+        dangerouslySetInnerHTML={{ __html: html || '' }}
+      /> : <div
+        className="mb-3 text-lg"
+      >
+        {children}        
+      </div>}
+      
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
           <img
