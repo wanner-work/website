@@ -5,7 +5,12 @@ interface Props {
   background?: string
 }
 
-export default function Logo({ size = 1, color = 'white', background = 'black', className }: Props) {
+export default function Logo({
+  size = 1,
+  color = 'white',
+  background = 'black',
+  className
+}: Props) {
   return (
     <svg
       className={className}

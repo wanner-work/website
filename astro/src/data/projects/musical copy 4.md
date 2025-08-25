@@ -6,7 +6,7 @@ link: https://kidsmusical.ch
 published: 11.02.2025
 ---
 
-This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users. 
+This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users.
 
 ![admin bereich](../images/musical-1.webp)
 
@@ -14,7 +14,7 @@ There's also a personalized page for each user to access event resources, and an
 
 ### Data Storage
 
-To ensure reliable and efficient data management, the project utilizes Supabase as the persistence layer. 
+To ensure reliable and efficient data management, the project utilizes Supabase as the persistence layer.
 
 ![home page](../images/musical-2.webp)
 
@@ -22,7 +22,7 @@ This provides a robust framework for storing and retrieving data, ensuring the s
 
 ### Technology Employed
 
-In terms of the technology used, the project employs React and Next.js to deliver a fast and efficient front-end user experience. 
+In terms of the technology used, the project employs React and Next.js to deliver a fast and efficient front-end user experience.
 
 ![anmeldung](../images/musical-3.webp)
 

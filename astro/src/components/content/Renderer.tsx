@@ -1,11 +1,16 @@
-import Markdown from "react-markdown"
+import Markdown from 'react-markdown'
 
 interface Props {
-    children: string | any
+  children: string | any
 }
 
 export default function Renderer({ children }: Props) {
-    console.log(children)
+  console.log(children)
 
-    return <><Markdown>{children}</Markdown>{children}</>
+  return (
+    <>
+      <Markdown>{children}</Markdown>
+      {children}
+    </>
+  )
 }

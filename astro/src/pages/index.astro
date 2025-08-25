@@ -1,18 +1,21 @@
 ---
-import {getCollection} from "astro:content";
+import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Page from '../components/layout/Page'
+import Box from '@wanner.work/box'
+import Logo from '../components/brand/Logo2'
+import getFadeOverlay from '../methods/getFadeOverlay'
+import getTextFadeClassName from '../methods/getTextFadeString'
 
-const projects = await getCollection('projects');
-
-const someProps = {
-	count: 0,
-	projects
-};
+import * as content from '../data/home/home.md'
+import Header from '../components/home/Header'
 ---
 
 <Layout title="Astro Starter Kit">
-	<Page title="Hey, ich bin Jonas.">
-		hello world
-	</Page>
+  <Header
+    title={content.frontmatter.title}
+    subtitle={content.frontmatter.subtitle}
+    client:load
+  />
+  <Page />
 </Layout>

@@ -1,22 +1,27 @@
 ---
-import {getCollection} from "astro:content";
-import Page from '../components/layout/Page';
-import ProjectOverview from '../components/projects/ProjectOverview';
-import Layout from "../layouts/Layout.astro";
-const projects = await getCollection('projects');
+import { getCollection } from 'astro:content'
+import Page from '../components/layout/Page'
+import ProjectOverview from '../components/projects/ProjectOverview'
+import Layout from '../layouts/Layout.astro'
+const projects = await getCollection('projects')
 ---
 
 <Layout title="Projekte">
-    <Page title="Projekte" description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte.">
-            <div class="flex flex-col gap-12">
-                {projects.map(project => (
-                    <ProjectOverview
-                        id={project.id}
-                        image={project.data.image}
-                        description={project.data.description}
-                        link={project.data.link}
-                    />
-                ))} 
-            </div>
-    </Page>
+  <Page
+    title="Projekte"
+    description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte."
+  >
+    <div class="flex flex-col gap-12">
+      {
+        projects.map((project) => (
+          <ProjectOverview
+            id={project.id}
+            image={project.data.image}
+            description={project.data.description}
+            link={project.data.link}
+          />
+        ))
+      }
+    </div>
+  </Page>
 </Layout>

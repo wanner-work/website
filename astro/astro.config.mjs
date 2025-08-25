@@ -1,20 +1,17 @@
 // @ts-check
 
-import react from '@astrojs/react';
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import vercel from '@astrojs/vercel';
-import rehypeWrapImages from './src/rehype/rehypeWrapImages';
+import react from '@astrojs/react'
+import vercel from '@astrojs/vercel'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   integrations: [react()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
   markdown: {
-    rehypePlugins: [
-      rehypeWrapImages
-    ]
+    rehypePlugins: []
   },
-  adapter: vercel(),
-});
+  adapter: vercel()
+})
