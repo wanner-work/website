@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Page from '../../components/layout/Page';
-import ContentContainer from '../../components/content/ContentContainer';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -17,15 +16,13 @@ const { project } = Astro.props;
 
 if (project === undefined) {
   return Astro.redirect("/404");
-}
+} 
 
 const { Content } = await render(project);
 ---
 
 <Layout title="Projekte">
   <Page title={project.data.title} description={project.data.description}>
-    <ContentContainer>
-      <Content />
-    </ContentContainer>
+    <Content />
   </Page>
 </Layout>

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @source "../../node_modules/@wanner.work";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-dark: #2B2927;
