@@ -1,5 +1,0 @@
-git config --global user.email "jonas.wanner@h-och.ch"
-git config --global user.name "Jonas Wanner"
-
-git config user.email "jonas@wanner.com"
-git config user.name "jwanner83"
