@@ -11,6 +11,8 @@
 
   --spacing-small: 500px;
   --spacing-large: 700px;
+
+  --default-transition-duration: 100ms;
 }
 
 a:focus-visible {

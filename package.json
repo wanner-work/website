@@ -7,10 +7,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write .",
-    "svgr": "svgr --typescript --no-index --icon 4em --replace-attr-values '#E8DFCB'='currentColor' --out-dir src/components/icons icons",
+    "svgr": "svgr --typescript --no-index --icon 4em --replace-attr-values '#E8DFCB'='currentColor' --replace-attr-values '#2B2927'='#E8DFCB' --out-dir src/components/icons icons",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.4",
     "@astrojs/react": "^4.3.0",
     "@astrojs/vercel": "^8.2.6",
     "@faker-js/faker": "^10.0.0",

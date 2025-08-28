@@ -1,7 +1,7 @@
 import Box from '@wanner.work/box'
 import { type PropsWithChildren } from 'react'
-import getFadeOverlay from '../../methods/getFadeOverlay'
-import getTextFadeClassName from '../../methods/getTextFadeString'
+import getFadeOverlayClassName from '../../methods/ui/getFadeOverlayClassName'
+import getTextFadeClassName from '../../methods/ui/getTextFadeClassName'
 import Logo from '../brand/Logo'
 
 interface Props {
@@ -24,7 +24,7 @@ export default function Page({
           <div className="mb-4">
             <a href="/" className="relative inline-block overflow-hidden">
               <div
-                className={getFadeOverlay('absolute top-0 left-0 size-full')}
+                className={getFadeOverlayClassName('absolute top-0 left-0 size-full')}
               />
               <Logo size={0.07} className="text-dark" />
             </a>

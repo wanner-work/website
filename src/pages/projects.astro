@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
 import Page from '../components/layout/Page'
-import ProjectOverview from '../components/projects/ProjectOverview'
 import Layout from '../layouts/Layout.astro'
+import ProjectOverview from '@/components/pages/projects/ProjectOverview'
 const projects = await getCollection('projects')
 ---
 

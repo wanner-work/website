@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren } from 'react'
 
 interface Props {
   name: string
@@ -18,15 +18,15 @@ export default function TestimonialOverview({
 }: PropsWithChildren<Props>) {
   return (
     <div className="relative z-20">
-      {html ? <div
-        className="mb-3 text-lg"
-        dangerouslySetInnerHTML={{ __html: html || '' }}
-      /> : <div
-        className="mb-3 text-lg"
-      >
-        {children}        
-      </div>}
-      
+      {html ? (
+        <div
+          className="mb-3 text-lg"
+          dangerouslySetInnerHTML={{ __html: html || '' }}
+        />
+      ) : (
+        <div className="mb-3 text-lg">{children}</div>
+      )}
+
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
           <img

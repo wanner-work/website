@@ -1,11 +1,11 @@
-import ANIMATION from '../constants/ANIMATION'
-import useDragAction from '../hooks/useDragAction'
 import { faker } from '@faker-js/faker/locale/en'
 import clsx from 'clsx'
 import dayjs from 'dayjs'
 import { TrashIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useMemo, useState } from 'react'
+import ANIMATION from '../constants/ANIMATION'
+import useDragAction from '../hooks/useDragAction'
 
 interface Props {
   index: number
@@ -69,15 +69,15 @@ export default function InboxItem({ index, onClosed }: Props) {
             x < 0 && 'bg-red-500'
           )}
         />
-        <div className="absolute left-0 top-0 h-full"></div>
-        <div className="absolute right-0 top-0 flex h-full items-center">
+        <div className="absolute top-0 left-0 h-full"></div>
+        <div className="absolute top-0 right-0 flex h-full items-center">
           <motion.div
             className="px-5"
             animate={{
               scale: x <= ANIMATION.thresholdLeft ? 1 : 0.7
             }}
           >
-            <TrashIcon className="h-5 w-5 text-light" />
+            <TrashIcon className="text-light h-5 w-5" />
           </motion.div>
         </div>
 
@@ -94,13 +94,13 @@ export default function InboxItem({ index, onClosed }: Props) {
             duration: 0.2
           }}
           style={{ x: xMotionValue }}
-          className="mb-0.25 bg-dark p-4"
+          className="bg-dark mb-0.25 p-4"
         >
           <div className="mb-0.25 flex items-center justify-between gap-3">
-            <p className="truncate text-sm lowercase text-light">{title}</p>
-            <p className="truncate text-[12px] text-light/70">{date}</p>
+            <p className="text-light truncate text-sm lowercase">{title}</p>
+            <p className="text-light/70 truncate text-[12px]">{date}</p>
           </div>
-          <p className="text-[12px] lowercase text-light/70">{description}</p>
+          <p className="text-light/70 text-[12px] lowercase">{description}</p>
         </motion.div>
       </motion.div>
     </motion.div>

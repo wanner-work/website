@@ -1,7 +1,9 @@
-import type { FunctionComponent } from "react";
+import type { FunctionComponent } from 'react'
 
 export default interface SkillsItem {
-    title: string;
-    link: string;
-    svg: FunctionComponent;
+  title: string
+  link: string
+  svg: FunctionComponent<{
+    height: string | number
+  }>
 }

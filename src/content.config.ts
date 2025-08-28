@@ -23,4 +23,12 @@ const testimonials = defineCollection({
   })
 })
 
-export const collections = { projects, testimonials }
+const crafts = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/data/crafts' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string()
+  })
+})
+
+export const collections = { projects, testimonials, crafts }

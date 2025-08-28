@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content'
+import Page from '../../components/layout/Page'
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const crafts = await getCollection('crafts')
+
+  return crafts.map((craft) => ({
+    params: { id: craft.id },
+    props: { craft }
+  }))
+}
+
+const { craft } = Astro.props
+
+if (craft === undefined) {
+  return Astro.redirect('/404')
+}
+
+const { Content } = await render(craft)
+---
+
+<Layout title="Projekte">
+  <Page title={craft.data.title} description={craft.data.description}>
+    <Content />
+  </Page>
+</Layout>

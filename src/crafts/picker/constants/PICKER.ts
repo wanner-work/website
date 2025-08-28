@@ -1,5 +1,5 @@
 const PICKER = {
-  itemHeight: 30
+  itemHeight: 60
 }
 
 export default PICKER

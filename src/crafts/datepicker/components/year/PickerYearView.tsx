@@ -1,7 +1,7 @@
-import type PickerViewProps from '../../interfaces/PickerViewProps'
-import Picker from '../../../picker/components/Picker'
 import dayjs from 'dayjs'
 import { useMemo, useState } from 'react'
+import Picker from '../../../picker/components/Picker'
+import type PickerViewProps from '../../interfaces/PickerViewProps'
 
 export default function PickerYearView({
   year,
@@ -23,7 +23,7 @@ export default function PickerYearView({
   return (
     <div className="relative">
       <Picker onChange={setSelected} options={options} />
-      <button className="mt-3 w-full rounded bg-light p-1 text-center text-sm font-bold">
+      <button className="bg-light mt-3 w-full rounded p-1 text-center text-sm font-bold">
         Select
       </button>
     </div>

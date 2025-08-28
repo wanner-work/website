@@ -11,7 +11,7 @@ export default function PickerYear({ index, start, year }: Props) {
     <div data-index={start - index} className="shrink-0 snap-center py-3">
       <div
         className={clsx(
-          'text-center text-light',
+          'text-light text-center',
           year === start - index ? '' : 'scale-90 opacity-70'
         )}
       >

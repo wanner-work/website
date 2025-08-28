@@ -1,19 +1,17 @@
-import getFadeOverlay from '../../methods/getFadeOverlay'
-import getTextFadeClassName from '../../methods/getTextFadeString'
-import Figma from '../icons/Figma'
-import Liferay from '../icons/Liferay'
-import Next from '../icons/Next'
-import React from '../icons/React'
-import Vue from '../icons/Vue'
-import Astro from '../icons/Astro'
 import { useMemo } from 'react'
+import Astro from '../../icons/Astro'
+import Figma from '../../icons/Figma'
+import Liferay from '../../icons/Liferay'
+import Next from '../../icons/Next'
+import React from '../../icons/React'
+import Rolldown from '../../icons/Rolldown'
+import TypeScript from '../../icons/Typescript'
+import Vue from '../../icons/Vue'
 import SkillsPair from './SkillsPair'
-import TypeScript from '../icons/Typescript'
-import Rolldown from '../icons/Rolldown'
 
 export default function Skills() {
   const items = [
-   {
+    {
       title: 'React',
       svg: React,
       link: 'https://react.dev'
@@ -38,7 +36,7 @@ export default function Skills() {
       svg: Figma,
       link: 'https://www.figma.com'
     },
-     {
+    {
       title: 'Liferay',
       svg: Liferay,
       link: 'https://www.liferay.com'
@@ -64,8 +62,8 @@ export default function Skills() {
   }, [items])
 
   return (
-    <div className=''>
-      <ul className="h-[96px] flex items-center justify-between relative md:w-4/5 mx-auto">
+    <div className="">
+      <ul className="relative mx-auto flex h-[96px] items-center justify-between">
         {pairs.map(([item1, item2], index) => (
           <SkillsPair key={index} item1={item1} item2={item2} index={index} />
         ))}

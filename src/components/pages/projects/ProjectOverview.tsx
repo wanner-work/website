@@ -1,6 +1,6 @@
+import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
 import Box from '@wanner.work/box'
 import { ExternalLink } from 'lucide-react'
-import getFadeOverlay from '../../methods/getFadeOverlay'
 
 interface Props {
   id: string
@@ -22,7 +22,7 @@ export default function ProjectOverview({
         className="block transition-all hover:opacity-80"
       >
         <div className="relative h-40">
-          <div className={getFadeOverlay('absolute inset-0')} />
+          <div className={getFadeOverlayClassName('absolute inset-0')} />
           <img
             src={image}
             alt={description}

@@ -1,6 +1,6 @@
-import ANIMATION from '../constants/ANIMATION'
 import { useMotionValue } from 'motion/react'
 import { useEffect, useState } from 'react'
+import ANIMATION from '../constants/ANIMATION'
 
 interface Options {
   actionRight?: () => void

@@ -1,8 +1,8 @@
 'use client'
 
-import InboxItem from './InboxItem'
 import { AnimatePresence } from 'motion/react'
 import { useEffect, useState } from 'react'
+import InboxItem from './InboxItem'
 
 export default function InboxCraft() {
   const [amount, setAmount] = useState(1)
@@ -17,17 +17,17 @@ export default function InboxCraft() {
 
   return (
     <AnimatePresence>
-        <div className="overflow-hidden rounded-lg">
-          {Array(8 * amount)
-            .fill(0)
-            .map((_, i) => (
-              <InboxItem
-                key={i}
-                index={i}
-                onClosed={() => setDeletedAmount((prev) => prev + 1)}
-              />
-            ))}
-        </div>
-      </AnimatePresence>
+      <div className="overflow-hidden rounded-lg">
+        {Array(8 * amount)
+          .fill(0)
+          .map((_, i) => (
+            <InboxItem
+              key={i}
+              index={i}
+              onClosed={() => setDeletedAmount((prev) => prev + 1)}
+            />
+          ))}
+      </div>
+    </AnimatePresence>
   )
 }

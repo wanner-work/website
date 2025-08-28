@@ -1,10 +1,10 @@
+import dayjs, { type Dayjs } from 'dayjs'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import type PickerDayData from '../interfaces/PickerDayData'
 import PickerDayView from './day/PickerDayView'
 import PickerMonthView from './month/PickerMonthView'
 import PickerYearView from './year/PickerYearView'
-import type PickerDayData from '../interfaces/PickerDayData'
-import dayjs, { type Dayjs } from 'dayjs'
-import { useMemo, useState } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 interface Props {}
 
@@ -79,9 +79,9 @@ export default function DatePicker({}: Props) {
   }, [month, year])
 
   return (
-    <div className="m-auto w-picker rounded-lg bg-dark p-2">
+    <div className="w-picker bg-dark m-auto rounded-lg p-2">
       <div className="mb-2 flex items-center justify-between px-2 py-2">
-        <p className="select-none font-bold text-light">
+        <p className="text-light font-bold select-none">
           <span onClick={() => setView('month')}>
             {dayjs().set('month', month).format('MMMM')}
           </span>{' '}
@@ -92,13 +92,13 @@ export default function DatePicker({}: Props) {
             onClick={prevMonth}
             className="cursor-pointer transition hover:scale-105 active:scale-95"
           >
-            <ChevronLeftIcon className="h-5 w-5 text-light" />
+            <ChevronLeftIcon className="text-light h-5 w-5" />
           </div>
           <div
             onClick={nextMonth}
             className="cursor-pointer transition hover:scale-105 active:scale-95"
           >
-            <ChevronRightIcon className="h-5 w-5 text-light" />
+            <ChevronRightIcon className="text-light h-5 w-5" />
           </div>
         </div>
       </div>
