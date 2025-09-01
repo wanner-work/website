@@ -10,7 +10,7 @@ interface Props {
 export default function Title({ title, subtitle, className }: Props) {
     return (
         <div className={clsx(`flex flex-col gap-1`, className)}>
-            <h3 className={getTextFadeClassName('text-4xl font-serif font-bold')}>{title}</h3>
+            <h3 className={getTextFadeClassName('text-4xl font-serif font-bold leading-[1.4em]')}>{title}</h3>
             <p className={getTextFadeClassName('text-lg')}>{subtitle}</p>
         </div>
     )
