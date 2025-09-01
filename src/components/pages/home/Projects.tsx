@@ -30,19 +30,6 @@ export default function Projects({
         </div>
         <p className="mt-5 w-2/3">{description}</p>
       </a>
-      <div className="mt-12 flex justify-center">
-        <a
-          href="/projects"
-          className={getFadeClassName(
-            'text-light dark:text-dark flex cursor-pointer items-center gap-3 rounded-full px-6 py-4 text-sm font-medium transition-all hover:gap-5 hover:opacity-80 active:scale-95'
-          )}
-        >
-          Siehe weitere Projekte
-          <span>
-            <MoveRight className="size-4" />
-          </span>
-        </a>
-      </div>
     </div>
   )
 }

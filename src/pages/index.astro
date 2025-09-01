@@ -6,27 +6,41 @@ import Skills from '../components/pages/home/Skills'
 import Title from '../components/pages/home/Title'
 import Testimonials from '../components/pages/home/Testimonials'
 
-import * as content from '../../data/plain/home.md'
 import * as testimonial from '../../data/testimonials/jannik.md'
 import * as project from '../../data/projects/musical.md'
 import Projects from '@/components/pages/home/Projects'
+import getI18n from '@/methods/i18n/getI18n'
+import Button from '@/components/ui/button/Button'
+import { MoveRight } from 'lucide-react'
 ---
 
 <Layout title="Portfolio">
   <Header
-    title={content.frontmatter.title}
-    subtitle={content.frontmatter.subtitle}
+    title={getI18n('home.tagline')}
+    subtitle={getI18n('home.subline')}
+    ctaTitle={getI18n('home.cta.title')}
+    ctaLink={getI18n('home.cta.link')}
   />
   <Page>
-    <Title title="Stack" subtitle="Technologien, mit denen ich arbeite." className='mb-6 mt-32' />
+    <Title title={getI18n('home.stack.title')} subtitle={getI18n('home.stack.subtitle')} className='mb-6 mt-32' />
     <Skills client:visible />
 
-    <Title title="Projekte" subtitle="Eine Auswahl meiner Arbeiten." className='mb-6 mt-32' />
+    <Title title={getI18n('home.projects.title')} subtitle={getI18n('home.projects.subtitle')} className='mb-6 mt-32' />
     <Projects id="musical" description={project.frontmatter.description} image={project.frontmatter.image} />
+    <div class="mt-10 flex justify-center">
+      <Button href="/projects" iconAfter={MoveRight}>
+        {getI18n('home.projects.show-more')}
+      </Button>
+    </div>
 
-    <Title title="Referenzen" subtitle="Rückmeldungen von Personen." className='mb-6 mt-32' />
+    <Title title={getI18n('home.testimonials.title')} subtitle={getI18n('home.testimonials.subtitle')} className='mb-6 mt-32' />
     <Testimonials name={testimonial.frontmatter.name} picture={testimonial.frontmatter.picture} company={testimonial.frontmatter.company} companyLink={testimonial.frontmatter.companyLink}>
       <testimonial.Content />
     </Testimonials>
+    <div class="mt-10 flex justify-center">
+      <Button href="/testimonials" iconAfter={MoveRight}>
+        {getI18n('home.testimonials.show-more')}
+      </Button>
+    </div>
   </Page>
 </Layout>

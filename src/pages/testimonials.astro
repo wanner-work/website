@@ -3,14 +3,15 @@ import { getCollection } from 'astro:content'
 import Page from '../components/layout/Page'
 import Layout from '../layouts/Layout.astro'
 import TestimonialOverview from '../components/pages/testimonials/TestimonialOverview'
+import getI18n from '@/methods/i18n/getI18n'
 
 const testimonials = await getCollection('testimonials')
 ---
 
-<Layout title="Referenzen">
+<Layout title={getI18n('testimonials.title')}>
   <Page
-    title="Referenzen"
-    description="Stimmen von Personen, mit welchen ich in der Vergangenheit gearbeitet habe."
+    title={getI18n('testimonials.title')}
+    description={getI18n('testimonials.description')}
   >
     <div class="flex flex-col gap-12">
       {

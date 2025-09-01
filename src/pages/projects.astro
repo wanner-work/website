@@ -3,13 +3,14 @@ import { getCollection } from 'astro:content'
 import Page from '../components/layout/Page'
 import Layout from '../layouts/Layout.astro'
 import ProjectOverview from '@/components/pages/projects/ProjectOverview'
+import getI18n from '@/methods/i18n/getI18n'
 const projects = await getCollection('projects')
 ---
 
-<Layout title="Projekte">
+<Layout title={getI18n('projects.title')}>
   <Page
-    title="Projekte"
-    description="Arbeiten, welche ich in der Vergangenheit selbst oder im Team umsetzen durfte."
+    title={getI18n('projects.title')}
+    description={getI18n('projects.description')}
   >
     <div class="flex flex-col gap-12">
       {

@@ -45,20 +45,6 @@ export default function Testimonials({
           </div>
         </div>
       </div>
-
-      <div className="mt-6 flex justify-center">
-        <a
-          href="/testimonials"
-          className={getFadeClassName(
-            'text-light dark:text-dark flex cursor-pointer items-center gap-3 rounded-full px-6 py-4 text-sm font-medium transition-all hover:gap-5 hover:opacity-80 active:scale-95'
-          )}
-        >
-          Siehe weitere Referenzen
-          <span>
-            <MoveRight className="size-4" />
-          </span>
-        </a>
-      </div>
     </div>
   )
 }

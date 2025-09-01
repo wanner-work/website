@@ -4,13 +4,16 @@ import getFadeClassName from '../../../methods/ui/getFadeClassName'
 import getFadeOverlayClassName from '../../../methods/ui/getFadeOverlayClassName'
 import getTextFadeClassName from '../../../methods/ui/getTextFadeClassName'
 import Logo from '../../brand/Logo'
+import Button from '@/components/ui/button/Button'
 
 interface Props {
   title: string
   subtitle: string
+  ctaTitle: string
+  ctaLink: string
 }
 
-export default function Header({ title, subtitle }: Props) {
+export default function Header({ title, subtitle, ctaTitle, ctaLink }: Props) {
   return (
     <Box
       align="center"
@@ -36,28 +39,10 @@ export default function Header({ title, subtitle }: Props) {
       />
 
       <div className="mt-8 flex md:mt-12 gap-3">
-        <a
-          href="https://github.com/jwanner83"
-          target='_blank'
-          className={getFadeClassName(
-            'text-light dark:text-dark cursor-pointer rounded-full p-4 flex justify-center items-center size-[52px] transition-all hover:opacity-80 active:scale-95'
-          )}
-        >
-          <span>
-            <GithubIcon className="size-4" />
-          </span>
-        </a>
-        <a
-          href="mailto:jonas@wanner.com"
-          className={getFadeClassName(
-            'text-light dark:text-dark flex cursor-pointer items-center gap-3 rounded-full px-6 py-4 text-sm font-medium transition-all hover:gap-5 hover:opacity-80 active:scale-95'
-          )}
-        >
-          Kontaktiere mich!
-          <span>
-            <MoveRight className="size-4" />
-          </span>
-        </a>
+        <Button href='https://github.com/jwanner83' iconAfter={GithubIcon} />
+        <Button href={ctaLink} iconAfter={MoveRight}>
+          {ctaTitle}
+        </Button>
       </div>
     </Box>
   )

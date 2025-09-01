@@ -1,3 +1,4 @@
+import Container from '@/components/content/Container'
 import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
 import type { PropsWithChildren } from 'react'
 
@@ -19,15 +20,16 @@ export default function TestimonialOverview({
 }: PropsWithChildren<Props>) {
   return (
     <div className="relative z-20">
-      {html ? (
-        <div
-          className="mb-3 text-lg"
-          dangerouslySetInnerHTML={{ __html: html || '' }}
-        />
-      ) : (
-        <div className="mb-3 text-lg">{children}</div>
-      )}
-
+      <Container>
+        {html ? (
+          <div
+            className="mb-3 text-lg"
+            dangerouslySetInnerHTML={{ __html: html || '' }}
+          />
+        ) : (
+          <div className="mb-3 text-lg">{children}</div>
+        )}
+      </Container>
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
           <div className="size-12 aspect-square shrink-0 rounded-full relative">

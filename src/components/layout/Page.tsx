@@ -58,7 +58,7 @@ export default function Page({
           {description && (
             <p
               className={getTextFadeClassName(
-                'mt-4 max-w-[500px] text-xl font-medium md:text-2xl'
+                'mt-4 max-w-[450px] text-xl font-medium md:text-2xl'
               )}
             >
               {description}
