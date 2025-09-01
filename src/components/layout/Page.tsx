@@ -1,10 +1,9 @@
 import Box from '@wanner.work/box'
+import { MoveLeft } from 'lucide-react'
 import { type PropsWithChildren } from 'react'
 import getFadeOverlayClassName from '../../methods/ui/getFadeOverlayClassName'
 import getTextFadeClassName from '../../methods/ui/getTextFadeClassName'
 import Logo from '../brand/Logo'
-import { MoveLeft, MoveRight } from 'lucide-react'
-import getFadeClassName from '@/methods/ui/getFadeClassName'
 
 interface Props {
   title?: string
@@ -28,33 +27,35 @@ export default function Page({
           <div className="mb-4">
             <a href="/" className="relative inline-block overflow-hidden">
               <div
-                className={getFadeOverlayClassName('absolute top-0 left-0 size-full')}
+                className={getFadeOverlayClassName(
+                  'absolute top-0 left-0 size-full'
+                )}
               />
               <Logo size={0.07} className="text-dark" />
             </a>
           </div>
           {back && (
-            <div className='flex'>
+            <div className="flex">
               <a
                 href={back}
-                className='transition-all hover:gap-3 hover:opacity-80 active:scale-95 flex items-center gap-2 mt-4'
+                className="mt-4 flex items-center gap-2 transition-all hover:gap-3 hover:opacity-80 active:scale-95"
               >
                 <span>
-                  <MoveLeft className="size-4 text-dark/40 dark:text-light/40" />
+                  <MoveLeft className="text-dark/40 dark:text-light/40 size-4" />
                 </span>
-                <span className={getTextFadeClassName()}>
-                  Back
-                </span>
+                <span className={getTextFadeClassName()}>Back</span>
               </a>
             </div>
           )}
-          {title && <h1
-            className={getTextFadeClassName(
-              'font-serif text-5xl leading-22 font-bold md:text-6xl'
-            )}
-          >
-            {title}
-          </h1>}
+          {title && (
+            <h1
+              className={getTextFadeClassName(
+                'font-serif text-5xl leading-22 font-bold md:text-6xl'
+              )}
+            >
+              {title}
+            </h1>
+          )}
           {description && (
             <p
               className={getTextFadeClassName(

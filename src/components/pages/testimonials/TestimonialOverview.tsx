@@ -32,9 +32,17 @@ export default function TestimonialOverview({
       </Container>
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
-          <div className="size-12 aspect-square shrink-0 rounded-full relative">
-            <div className={getFadeOverlayClassName('absolute size-full inset-0 rounded-full z-10')} />
-            <img src={picture} alt={name} className="size-full rounded-full absolute object-cover saturate-[40%]" />
+          <div className="relative aspect-square size-12 shrink-0 rounded-full">
+            <div
+              className={getFadeOverlayClassName(
+                'absolute inset-0 z-10 size-full rounded-full'
+              )}
+            />
+            <img
+              src={picture}
+              alt={name}
+              className="absolute size-full rounded-full object-cover saturate-[40%]"
+            />
           </div>
         ) : (
           <div className="from-dark to-dark/40 size-12 shrink-0 rounded-full bg-gradient-to-br" />

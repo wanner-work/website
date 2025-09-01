@@ -1,6 +1,3 @@
-import Box from '@wanner.work/box'
-import { ExternalLink, MoveRight } from 'lucide-react'
-import getFadeClassName from '@/methods/ui/getFadeClassName'
 import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
 
 interface Props {
@@ -9,18 +6,14 @@ interface Props {
   description: string
 }
 
-export default function Projects({
-  id,
-  image,
-  description,
-}: Props) {
+export default function Projects({ id, image, description }: Props) {
   return (
     <div>
       <a
         href={`/projects/${id}`}
         className="block transition-all hover:opacity-80"
       >
-        <div className="relative h-52 rounded-large overflow-hidden">
+        <div className="rounded-large relative h-52 overflow-hidden">
           <div className={getFadeOverlayClassName('absolute inset-0')} />
           <img
             src={image}

@@ -1,10 +1,9 @@
+import Button from '@/components/ui/button/Button'
 import Box from '@wanner.work/box'
 import { GithubIcon, MoveRight } from 'lucide-react'
-import getFadeClassName from '../../../methods/ui/getFadeClassName'
 import getFadeOverlayClassName from '../../../methods/ui/getFadeOverlayClassName'
 import getTextFadeClassName from '../../../methods/ui/getTextFadeClassName'
 import Logo from '../../brand/Logo'
-import Button from '@/components/ui/button/Button'
 
 interface Props {
   title: string
@@ -21,7 +20,11 @@ export default function Header({ title, subtitle, ctaTitle, ctaLink }: Props) {
     >
       <div className="mb-6 md:mb-12">
         <a href="/" className="relative inline-block overflow-hidden">
-          <div className={getFadeOverlayClassName('absolute top-0 left-0 size-full')} />
+          <div
+            className={getFadeOverlayClassName(
+              'absolute top-0 left-0 size-full'
+            )}
+          />
           <Logo size={0.07} className="text-dark" />
         </a>
       </div>
@@ -38,8 +41,8 @@ export default function Header({ title, subtitle, ctaTitle, ctaLink }: Props) {
         )}
       />
 
-      <div className="mt-8 flex md:mt-12 gap-3">
-        <Button href='https://github.com/jwanner83' iconAfter={GithubIcon} />
+      <div className="mt-8 flex gap-3 md:mt-12">
+        <Button href="https://github.com/jwanner83" iconAfter={GithubIcon} />
         <Button href={ctaLink} iconAfter={MoveRight}>
           {ctaTitle}
         </Button>

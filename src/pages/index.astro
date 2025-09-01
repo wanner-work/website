@@ -22,19 +22,40 @@ import { MoveRight } from 'lucide-react'
     ctaLink={getI18n('home.cta.link')}
   />
   <Page>
-    <Title title={getI18n('home.stack.title')} subtitle={getI18n('home.stack.subtitle')} className='mb-6 mt-32' />
+    <Title
+      title={getI18n('home.stack.title')}
+      subtitle={getI18n('home.stack.subtitle')}
+      className="mb-6 md:mt-32 mt-20"
+    />
     <Skills client:visible />
 
-    <Title title={getI18n('home.projects.title')} subtitle={getI18n('home.projects.subtitle')} className='mb-6 mt-32' />
-    <Projects id="musical" description={project.frontmatter.description} image={project.frontmatter.image} />
+    <Title
+      title={getI18n('home.projects.title')}
+      subtitle={getI18n('home.projects.subtitle')}
+      className="mb-6 md:mt-32 mt-20"
+    />
+    <Projects
+      id="musical"
+      description={project.frontmatter.description}
+      image={project.frontmatter.image}
+    />
     <div class="mt-10 flex justify-center">
       <Button href="/projects" iconAfter={MoveRight}>
         {getI18n('home.projects.show-more')}
       </Button>
     </div>
 
-    <Title title={getI18n('home.testimonials.title')} subtitle={getI18n('home.testimonials.subtitle')} className='mb-6 mt-32' />
-    <Testimonials name={testimonial.frontmatter.name} picture={testimonial.frontmatter.picture} company={testimonial.frontmatter.company} companyLink={testimonial.frontmatter.companyLink}>
+    <Title
+      title={getI18n('home.testimonials.title')}
+      subtitle={getI18n('home.testimonials.subtitle')}
+      className="mb-6 md:mt-32 mt-20"
+    />
+    <Testimonials
+      name={testimonial.frontmatter.name}
+      picture={testimonial.frontmatter.picture}
+      company={testimonial.frontmatter.company}
+      companyLink={testimonial.frontmatter.companyLink}
+    >
       <testimonial.Content />
     </Testimonials>
     <div class="mt-10 flex justify-center">

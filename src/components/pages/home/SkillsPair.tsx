@@ -41,7 +41,9 @@ export default function SkillsPair({ item1, item2, index }: Props) {
             key={item1.title}
             className="text-dark absolute text-2xl"
           >
-            <div className={getFadeOverlayClassName('absolute inset-0 size-full')} />
+            <div
+              className={getFadeOverlayClassName('absolute inset-0 size-full')}
+            />
             <item1.svg height="42" />
           </motion.a>
         )}
@@ -57,7 +59,9 @@ export default function SkillsPair({ item1, item2, index }: Props) {
             key={item2.title}
             className="text-dark absolute text-2xl"
           >
-            <div className={getFadeOverlayClassName('absolute inset-0 size-full')} />
+            <div
+              className={getFadeOverlayClassName('absolute inset-0 size-full')}
+            />
             <item2.svg height="42" />
           </motion.a>
         )}

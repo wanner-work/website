@@ -7,9 +7,12 @@ import Container from '@/components/content/Container'
 ---
 
 <Layout title={content.frontmatter.title}>
-  <Page title={content.frontmatter.title} description={content.frontmatter.description}>
+  <Page
+    title={content.frontmatter.title}
+    description={content.frontmatter.description}
+  >
     <Container>
-        <content.Content />
+      <content.Content />
     </Container>
   </Page>
 </Layout>
