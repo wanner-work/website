@@ -39,7 +39,7 @@ export default function SkillsPair({ item1, item2, index }: Props) {
             exit={{ opacity: 0, y: -yTranslation, filter: 'blur(4px)' }}
             transition={{ delay, duration, ease: [0.873, 0.236, 0.179, 0.918] }}
             key={item1.title}
-            className="text-dark absolute text-2xl"
+            className="text-dark dark:text-light absolute text-2xl"
           >
             <div
               className={getFadeOverlayClassName('absolute inset-0 size-full')}
@@ -57,7 +57,7 @@ export default function SkillsPair({ item1, item2, index }: Props) {
             exit={{ opacity: 0, y: -yTranslation, filter: 'blur(4px)' }}
             transition={{ delay, duration, ease: [0.873, 0.236, 0.179, 0.918] }}
             key={item2.title}
-            className="text-dark absolute text-2xl"
+            className="text-dark dark:text-light absolute text-2xl"
           >
             <div
               className={getFadeOverlayClassName('absolute inset-0 size-full')}

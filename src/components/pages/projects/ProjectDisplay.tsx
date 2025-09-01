@@ -14,7 +14,10 @@ export default function ProjectDisplay({ tags, projects, viewProject, viewExtern
   const [displayedProjects, setDisplayedProjects] = useState(projects)
 
   const handleFilterCallback = (activeTags: string[]) => {
-    console.log(activeTags)
+    if (activeTags.length === 0) {
+      setDisplayedProjects(projects)
+      return
+    }
 
     const filteredProjects = projects.filter((proj) =>
       proj.data.tags.some((tag) => activeTags.includes(tag))

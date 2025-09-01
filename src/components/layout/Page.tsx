@@ -31,7 +31,7 @@ export default function Page({
                   'absolute top-0 left-0 size-full'
                 )}
               />
-              <Logo size={0.07} className="text-dark" />
+              <Logo size={0.07} className="text-dark dark:text-light" />
             </a>
           </div>
           {back && (
