@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Page from '../components/layout/Page'
+
+import * as content from '../../data/plain/privacy.md'
+import Container from '@/components/content/Container'
+---
+
+<Layout title={content.frontmatter.title}>
+  <Page title={content.frontmatter.title} description={content.frontmatter.description}>
+    <Container>
+        <content.Content />
+    </Container>
+  </Page>
+</Layout>

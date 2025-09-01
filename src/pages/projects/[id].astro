@@ -22,7 +22,7 @@ if (project === undefined) {
 const { Content } = await render(project)
 ---
 
-<Layout title="Projekte">
+<Layout title={project.data.title + ' - Projekte'}>
   <Page title={project.data.title} description={project.data.description} back="/projects">
     <Container>
       <Content />

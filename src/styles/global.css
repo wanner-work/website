@@ -17,7 +17,7 @@
   --default-transition-duration: 100ms;
 }
 
-a:focus-visible {
+*:focus-visible {
   outline-offset: 2px;
   outline-width: 3px;
   outline-color: #2b2927;
