@@ -1,45 +1,59 @@
+import Button from '@/components/ui/button/Button'
+import getFadeClassName from '@/methods/ui/getFadeClassName'
 import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
-import Box from '@wanner.work/box'
-import { ExternalLink } from 'lucide-react'
+import type { CollectionEntry } from 'astro:content'
+import { ExternalLink, MoveRight } from 'lucide-react'
 
 interface Props {
-  id: string
-  image: string
-  description: string
-  link?: string
+  project: CollectionEntry<"projects">
+  viewProject: string
+  viewExternalProject: string
 }
 
 export default function ProjectOverview({
-  id,
-  image,
-  description,
-  link
+  project,
+  viewProject,
+  viewExternalProject
 }: Props) {
   return (
-    <Box align="center" className="max-w-[500px] md:max-w-[800px]">
+    <div>
       <a
-        href={`/projects/${id}`}
+        href={`/projects/${project.id}`}
         className="block transition-all hover:opacity-80"
       >
-        <div className="rounded-large relative h-40 overflow-hidden">
+        <div className="rounded-large relative h-52 overflow-hidden">
           <div className={getFadeOverlayClassName('absolute inset-0')} />
           <img
-            src={image}
-            alt={description}
+            src={project.data.image}
+            alt={project.data.description}
             className="size-full object-cover"
           />
         </div>
-        <p className="mt-3">{description}</p>
-        {link && (
-          <a
-            href={link}
-            className="mt-2 inline-flex items-center gap-1.5 text-sm transition-all hover:opacity-80"
-          >
-            <ExternalLink className="size-3" />
-            <span>Sehe dir das Projekt live an!</span>
-          </a>
-        )}
+        <div className="mt-6 mb-3 flex gap-2">
+          {project.data.tags?.map((tag: string) => (
+            <span
+              key={tag + project.id}
+              className={getFadeClassName(
+                'text-light rounded-full px-2 py-1 text-[10px] font-medium uppercase'
+              )}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <p className="font-serif text-3xl font-bold opacity-80">{project.data.title}</p>
+        <p className="mt-2 opacity-80">{project.data.description}</p>
       </a>
-    </Box>
+      <div className="mt-4 flex gap-4">
+        <Button iconAfter={MoveRight} href={`/projects/${project.id}`}>
+          {viewProject}
+        </Button>
+        {project.data.link && (
+          <Button href={project.data.link} target="_blank" iconAfter={ExternalLink}>
+            {viewExternalProject}
+          </Button>
+        )}
+      </div>
+    </div>
   )
 }

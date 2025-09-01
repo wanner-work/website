@@ -16,11 +16,11 @@ export default function Testimonials({
   return (
     <div>
       <div className="grid grid-cols-3 gap-x-8">
-        <div className="col-span-3 md:col-span-2 flex flex-col justify-center py-8">
+        <div className="col-span-3 flex flex-col justify-center py-8 md:col-span-2">
           <div className="relative">
             <Quote className="text-dark/10 absolute size-12 -translate-x-5 -translate-y-3" />
             <div className="mb-3 text-lg">{children}</div>
-            <div className="flex gap-4 items-center mt-5 md:mt-0">
+            <div className="mt-5 flex items-center gap-4 md:mt-0">
               <div className="relative aspect-square size-12 shrink-0 rounded-full md:hidden">
                 <div
                   className={getFadeOverlayClassName(
@@ -53,7 +53,7 @@ export default function Testimonials({
             </div>
           </div>
         </div>
-        <div className="col-span-1 py-8 pl-8 hidden md:block">
+        <div className="col-span-1 hidden py-8 pl-8 md:block">
           <div className="relative aspect-square size-full shrink-0 rounded-full">
             <div
               className={getFadeOverlayClassName(
