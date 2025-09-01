@@ -1,5 +1,5 @@
 ---
-image: /images/musical.png
+image: /images/projects/musical.png
 title: Kids Musical
 tagline: personal project
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
