@@ -8,7 +8,6 @@ interface Props {
   picture?: string
   company: string
   companyLink?: string
-  html: string
 }
 
 export default function Testimonials({

@@ -1,3 +1,4 @@
+import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
 import type { PropsWithChildren } from 'react'
 
 interface Props {
@@ -29,11 +30,10 @@ export default function TestimonialOverview({
 
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
-          <img
-            className="size-12 rounded-full object-cover"
-            src={picture}
-            alt={`${name}'s picture`}
-          />
+          <div className="size-12 aspect-square shrink-0 rounded-full relative">
+            <div className={getFadeOverlayClassName('absolute size-full inset-0 rounded-full z-10')} />
+            <img src={picture} alt={name} className="size-full rounded-full absolute object-cover saturate-[40%]" />
+          </div>
         ) : (
           <div className="from-dark to-dark/40 size-12 shrink-0 rounded-full bg-gradient-to-br" />
         )}

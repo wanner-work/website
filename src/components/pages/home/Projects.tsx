@@ -20,7 +20,7 @@ export default function Projects({
         href={`/projects/${id}`}
         className="block transition-all hover:opacity-80"
       >
-        <div className="relative h-52 rounded-[26px] overflow-hidden">
+        <div className="relative h-52 rounded-large overflow-hidden">
           <div className={getFadeOverlayClassName('absolute inset-0')} />
           <img
             src={image}

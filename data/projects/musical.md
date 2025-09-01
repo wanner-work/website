@@ -1,9 +1,14 @@
 ---
 image: /images/musical.png
 title: Kids Musical
+tagline: personal project
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 link: https://kidsmusical.ch
 published: 11.02.2025
+tags: 
+    - personal
+    - react
+    - next.js
 ---
 
 This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users.

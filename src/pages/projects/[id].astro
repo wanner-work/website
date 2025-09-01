@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content'
 import Page from '../../components/layout/Page'
 import Layout from '../../layouts/Layout.astro'
+import Container from '@/components/content/Container'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -22,7 +23,9 @@ const { Content } = await render(project)
 ---
 
 <Layout title="Projekte">
-  <Page title={project.data.title} description={project.data.description}>
-    <Content />
+  <Page title={project.data.title} description={project.data.description} back="/projects">
+    <Container>
+      <Content />
+    </Container>
   </Page>
 </Layout>

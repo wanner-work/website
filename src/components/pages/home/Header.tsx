@@ -1,5 +1,5 @@
 import Box from '@wanner.work/box'
-import { MoveRight } from 'lucide-react'
+import { GithubIcon, MoveRight } from 'lucide-react'
 import getFadeClassName from '../../../methods/ui/getFadeClassName'
 import getFadeOverlayClassName from '../../../methods/ui/getFadeOverlayClassName'
 import getTextFadeClassName from '../../../methods/ui/getTextFadeClassName'
@@ -35,7 +35,18 @@ export default function Header({ title, subtitle }: Props) {
         )}
       />
 
-      <div className="mt-8 flex md:mt-12">
+      <div className="mt-8 flex md:mt-12 gap-3">
+        <a
+          href="https://github.com/jwanner83"
+          target='_blank'
+          className={getFadeClassName(
+            'text-light dark:text-dark cursor-pointer rounded-full p-4 flex justify-center items-center size-[52px] transition-all hover:opacity-80 active:scale-95'
+          )}
+        >
+          <span>
+            <GithubIcon className="size-4" />
+          </span>
+        </a>
         <a
           href="mailto:jonas@wanner.com"
           className={getFadeClassName(
