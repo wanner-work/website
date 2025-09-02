@@ -16,7 +16,7 @@ export default function Footer() {
         </p>
       </Box>
       <div className="absolute inset-0 h-full overflow-hidden">
-        <div className="from-light to-dark/80 dark:from-dark/80 absolute z-10 size-full bg-linear-to-b dark:to-light/60" />
+        <div className="from-light to-dark/80 dark:from-dark/80 dark:to-light/60 absolute z-10 size-full bg-linear-to-b" />
         <Logo className="text-dark dark:text-light absolute left-0 w-full scale-110" />
       </div>
     </div>

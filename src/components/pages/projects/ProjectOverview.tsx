@@ -5,7 +5,7 @@ import type { CollectionEntry } from 'astro:content'
 import { ExternalLink, MoveRight } from 'lucide-react'
 
 interface Props {
-  project: CollectionEntry<"projects">
+  project: CollectionEntry<'projects'>
   viewProject: string
   viewExternalProject: string
 }
@@ -30,7 +30,7 @@ export default function ProjectOverview({
           />
         </div>
         <div className="mt-6 mb-3 flex gap-2">
-          {project.data.tags?.map((tag: string) => (
+          {project.data.tags?.public?.map((tag: string) => (
             <span
               key={tag + project.id}
               className={getFadeClassName(
@@ -41,7 +41,9 @@ export default function ProjectOverview({
             </span>
           ))}
         </div>
-        <p className="font-serif text-3xl font-bold opacity-80">{project.data.title}</p>
+        <p className="font-serif text-3xl font-bold opacity-80">
+          {project.data.title}
+        </p>
         <p className="mt-2 opacity-80">{project.data.description}</p>
       </a>
       <div className="mt-4 flex gap-4">
@@ -49,7 +51,11 @@ export default function ProjectOverview({
           {viewProject}
         </Button>
         {project.data.link && (
-          <Button href={project.data.link} target="_blank" iconAfter={ExternalLink}>
+          <Button
+            href={project.data.link}
+            target="_blank"
+            iconAfter={ExternalLink}
+          >
             {viewExternalProject}
           </Button>
         )}

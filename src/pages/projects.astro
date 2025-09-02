@@ -2,23 +2,25 @@
 import { getCollection } from 'astro:content'
 import Page from '../components/layout/Page'
 import Layout from '../layouts/Layout.astro'
-import getI18n from '@/methods/i18n/getI18n'
+import i18n from '@/methods/i18n/i18n'
 import ProjectDisplay from '@/components/pages/projects/ProjectDisplay'
 const projects = await getCollection('projects')
 
 const proj = projects[0]
 ---
 
-<Layout title={getI18n('projects.title')}>
+<Layout title={i18n('projects.title')}>
   <Page
-    title={getI18n('projects.title')}
-    description={getI18n('projects.description')}
+    title={i18n('projects.title')}
+    description={i18n('projects.description')}
   >
     <ProjectDisplay
-      tags={projects.flatMap((project) => project.data.tags).filter((tag, index, self) => self.indexOf(tag) === index)}
+      tags={projects
+        .flatMap((project) => project.data.tags.public)
+        .filter((tag, index, self) => self.indexOf(tag) === index)}
       projects={projects}
-      viewProject={getI18n('projects.view')}
-      viewExternalProject={getI18n('projects.view-external')}
+      viewProject={i18n('projects.view')}
+      viewExternalProject={i18n('projects.view-external')}
       client:visible
     />
   </Page>

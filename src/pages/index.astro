@@ -6,61 +6,74 @@ import Skills from '../components/pages/home/Skills'
 import Title from '../components/pages/home/Title'
 import Testimonials from '../components/pages/home/Testimonials'
 
-import * as testimonial from '../../data/testimonials/jannik.md'
-import * as project from '../../data/projects/musical.md'
 import Projects from '@/components/pages/home/Projects'
-import getI18n from '@/methods/i18n/getI18n'
 import Button from '@/components/ui/button/Button'
 import { MoveRight } from 'lucide-react'
+import { getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import i18n from '@/methods/i18n/i18n'
+
+const testimonials = await getCollection('testimonials', ({ data }) => {
+  return data.priority === true;
+});
+const testimonial = testimonials[0];
+const { Content: TestimonialContent } = await render(testimonial);
+
+const projects = await getCollection('projects', ({ data }) => {
+  return data.priority === true;
+});
+const project = projects[0];
 ---
 
 <Layout title="Portfolio">
   <Header
-    title={getI18n('home.tagline')}
-    subtitle={getI18n('home.subline')}
-    ctaTitle={getI18n('home.cta.title')}
-    ctaLink={getI18n('home.cta.link')}
+    title={i18n('home.tagline')}
+    subtitle={i18n('home.subline')}
+    ctaTitle={i18n('home.cta.title')}
+    ctaLink={i18n('home.cta.link')}
   />
   <Page>
     <Title
-      title={getI18n('home.stack.title')}
-      subtitle={getI18n('home.stack.subtitle')}
+      title={i18n('home.stack.title')}
+      subtitle={i18n('home.stack.subtitle')}
       className="mb-6 md:mt-32 mt-20"
     />
     <Skills client:visible />
 
     <Title
-      title={getI18n('home.projects.title')}
-      subtitle={getI18n('home.projects.subtitle')}
+      title={i18n('home.projects.title')}
+      subtitle={i18n('home.projects.subtitle')}
       className="mb-6 md:mt-32 mt-20"
     />
     <Projects
       id="musical"
-      description={project.frontmatter.description}
-      image={project.frontmatter.image}
+      description={project.data.description}
+      image={project.data.image}
     />
     <div class="mt-10 flex justify-center">
       <Button href="/projects" iconAfter={MoveRight}>
-        {getI18n('home.projects.show-more')}
+        {i18n('home.projects.show-more')}
       </Button>
     </div>
 
     <Title
-      title={getI18n('home.testimonials.title')}
-      subtitle={getI18n('home.testimonials.subtitle')}
+      title={i18n('home.testimonials.title')}
+      subtitle={i18n('home.testimonials.subtitle')}
       className="mb-6 md:mt-32 mt-20"
     />
     <Testimonials
-      name={testimonial.frontmatter.name}
-      picture={testimonial.frontmatter.picture}
-      company={testimonial.frontmatter.company}
-      companyLink={testimonial.frontmatter.companyLink}
+      name={testimonial.data.name}
+      picture={testimonial.data.picture}
+      company={testimonial.data.company}
+      companyLink={testimonial.data.companyLink}
+      visitProjects={i18n('home.testimonials.visit-projects')}
+      tags={testimonial.data.tags}
     >
-      <testimonial.Content />
+      <TestimonialContent />
     </Testimonials>
     <div class="mt-10 flex justify-center">
       <Button href="/testimonials" iconAfter={MoveRight}>
-        {getI18n('home.testimonials.show-more')}
+        {i18n('home.testimonials.show-more')}
       </Button>
     </div>
   </Page>

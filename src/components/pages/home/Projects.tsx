@@ -13,7 +13,7 @@ export default function Projects({ id, image, description }: Props) {
         href={`/projects/${id}`}
         className="block transition-all hover:opacity-80"
       >
-        <div className="rounded-large relative h-52 overflow-hidden">
+        <div className="rounded-large relative h-64 overflow-hidden">
           <div className={getFadeOverlayClassName('absolute inset-0')} />
           <img
             src={image}

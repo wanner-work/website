@@ -2,13 +2,17 @@
 image: /images/projects/cash.png
 title: Cash
 tagline: personal project
-description: Start managing your money with ease.
+description: Platform to track and analyse your spendings. Built with Next.js and Supabase.
 link: https://cash.wanner.work
 published: 11.02.2025
 tags:
-  - personal
-  - next.js
-  - pwa
+  public:
+    - personal
+    - next.js
+    - pwa
+  hidden:
+    - clavis
+priority: true
 ---
 
 ![admin bereich](../images/cash-1.png)

@@ -11,7 +11,11 @@ const projects = defineCollection({
     description: z.string(),
     link: z.string().url(),
     published: z.coerce.date(),
-    tags: z.array(z.string())
+    tags: z.object({
+      public: z.array(z.string()),
+      hidden: z.array(z.string()).optional()
+    }),
+    priority: z.boolean().optional()
   })
 })
 
@@ -21,7 +25,9 @@ const testimonials = defineCollection({
     picture: z.string().optional(),
     name: z.string(),
     company: z.string(),
-    companyLink: z.string().url()
+    companyLink: z.string().url(),
+    priority: z.boolean().optional(),
+    tags: z.array(z.string()).optional(),
   })
 })
 
@@ -29,7 +35,8 @@ const crafts = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './data/crafts' }),
   schema: z.object({
     title: z.string(),
-    description: z.string()
+    description: z.string(),
+    priority: z.boolean().optional()
   })
 })
 

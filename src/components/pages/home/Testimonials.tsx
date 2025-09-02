@@ -1,5 +1,5 @@
 import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
-import { Quote } from 'lucide-react'
+import { ExternalLink, Quote } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 
 interface Props {
@@ -7,6 +7,8 @@ interface Props {
   picture?: string
   company: string
   companyLink?: string
+  visitProjects: string
+  tags?: string[]
 }
 
 export default function Testimonials({
@@ -34,6 +36,11 @@ export default function Testimonials({
                 />
               </div>
               <div>
+                {props.tags && props.tags.length > 0 && 
+                  <a href={`/projects/?tag=${props.tags?.join('&tag=')}`} className='flex items-center gap-1.5 mb-2 text-sm transition-all hover:opacity-80'>
+                    <ExternalLink className='size-3.5' /><span>{props.visitProjects}</span>
+                  </a>
+                }
                 <p className="font-serif font-medium">{props.name}</p>
                 <span className="flex flex-wrap gap-x-2 text-sm">
                   <p>{props.company}</p>

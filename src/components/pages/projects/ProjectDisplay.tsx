@@ -1,7 +1,7 @@
+import type { CollectionEntry } from 'astro:content'
 import { useState } from 'react'
 import ProjectFilter from './ProjectFilter'
 import ProjectOverview from './ProjectOverview'
-import type { CollectionEntry } from 'astro:content'
 
 interface Props {
   tags: string[]
@@ -10,7 +10,12 @@ interface Props {
   viewExternalProject: string
 }
 
-export default function ProjectDisplay({ tags, projects, viewProject, viewExternalProject }: Props) {
+export default function ProjectDisplay({
+  tags,
+  projects,
+  viewProject,
+  viewExternalProject
+}: Props) {
   const [displayedProjects, setDisplayedProjects] = useState(projects)
 
   const handleFilterCallback = (activeTags: string[]) => {
@@ -20,7 +25,7 @@ export default function ProjectDisplay({ tags, projects, viewProject, viewExtern
     }
 
     const filteredProjects = projects.filter((proj) =>
-      proj.data.tags.some((tag) => activeTags.includes(tag))
+      proj.data.tags.public.some((tag) => activeTags.includes(tag))
     )
     setDisplayedProjects(filteredProjects)
   }
@@ -28,7 +33,7 @@ export default function ProjectDisplay({ tags, projects, viewProject, viewExtern
   return (
     <div>
       <ProjectFilter tags={tags} onTagCallback={handleFilterCallback} />
-      <div className='flex gap-12 flex-col'>
+      <div className="flex flex-col gap-12">
         {displayedProjects.map((project) => (
           <ProjectOverview
             key={project.id}
