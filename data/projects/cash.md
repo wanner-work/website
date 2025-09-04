@@ -6,11 +6,9 @@ description: Platform to track and analyse your spendings. Built with Next.js an
 link: https://cash.wanner.work
 published: 11.02.2025
 tags:
-  public:
-    - next.js
-    - pwa
-  hidden:
-    - clavis
+  - next.js
+  - pwa
+  - clavis
 priority: true
 ---
 

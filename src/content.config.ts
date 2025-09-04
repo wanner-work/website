@@ -11,10 +11,7 @@ const projects = defineCollection({
     description: z.string(),
     link: z.string().url(),
     published: z.coerce.date(),
-    tags: z.object({
-      public: z.array(z.string()),
-      hidden: z.array(z.string()).optional()
-    }),
+    tags: z.array(z.string()),
     priority: z.boolean().optional()
   })
 })
@@ -27,7 +24,7 @@ const testimonials = defineCollection({
     company: z.string(),
     companyLink: z.string().url(),
     priority: z.boolean().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional()
   })
 })
 

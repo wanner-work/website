@@ -14,15 +14,15 @@ import i18n from '@/methods/i18n/i18n'
 import ProjectOverview from '@/components/pages/projects/ProjectOverview'
 
 const testimonials = await getCollection('testimonials', ({ data }) => {
-  return data.priority === true;
-});
-const testimonial = testimonials[0];
-const { Content: TestimonialContent } = await render(testimonial);
+  return data.priority === true
+})
+const testimonial = testimonials[0]
+const { Content: TestimonialContent } = await render(testimonial)
 
 const projects = await getCollection('projects', ({ data }) => {
-  return data.priority === true;
-});
-const project = projects[0];
+  return data.priority === true
+})
+const project = projects[0]
 ---
 
 <Layout title="Portfolio">
@@ -45,9 +45,7 @@ const project = projects[0];
       subtitle={i18n('home.projects.subtitle')}
       className="mb-6 md:mt-32 mt-20"
     />
-    <ProjectOverview
-      project={project}
-    />
+    <ProjectOverview project={project} client:visible />
     <div class="mt-10 flex justify-center">
       <Button href="/projects" iconAfter={MoveRight}>
         {i18n('home.projects.show-more')}

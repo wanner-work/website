@@ -1,8 +1,8 @@
 import type { CollectionEntry } from 'astro:content'
 import { useState } from 'react'
+import Title from '../home/Title'
 import ProjectFilter from './ProjectFilter'
 import ProjectOverview from './ProjectOverview'
-import Title from '../home/Title'
 
 interface Props {
   tags: string[]
@@ -28,16 +28,24 @@ export default function ProjectDisplay({
     }
 
     const filteredProjects = projects.filter((proj) =>
-      proj.data.tags.public.some((tag) => activeTags.includes(tag))
+      proj.data.tags.some((tag) => activeTags.includes(tag))
     )
     setDisplayedProjects(filteredProjects)
   }
 
   return (
     <div>
-      <Title className='mb-6' title='Filter by tags' subtitle='asdfkasdflkajsdflaks dfjalsdf jasldf asdkl' />
+      <Title
+        className="mb-6"
+        title="Filter by tags"
+        subtitle="asdfkasdflkajsdflaks dfjalsdf jasldf asdkl"
+      />
       <ProjectFilter tags={tags} onTagCallback={handleFilterCallback} />
-      <Title className='mb-6' title={activeTags.length > 0 ? 'Filtered projects' : 'All projects'} subtitle='asdfkasdflkajsdflaks dfjalsdf jasldf asdkl' />
+      <Title
+        className="mb-6"
+        title={activeTags.length > 0 ? 'Filtered projects' : 'All projects'}
+        subtitle="asdfkasdflkajsdflaks dfjalsdf jasldf asdkl"
+      />
       <div className="flex flex-col gap-12">
         {displayedProjects.map((project) => (
           <ProjectOverview

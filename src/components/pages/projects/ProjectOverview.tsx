@@ -30,7 +30,7 @@ export default function ProjectOverview({
           />
         </div>
         <div className="mt-6 mb-3 flex gap-2">
-          {project.data.tags?.public?.map((tag: string) => (
+          {project.data.tags?.map((tag: string) => (
             <span
               key={tag + project.id}
               className={getFadeClassName(
@@ -46,20 +46,22 @@ export default function ProjectOverview({
         </p>
         <p className="mt-2 opacity-80">{project.data.description}</p>
       </a>
-      {(viewProject && viewExternalProject) && <div className="mt-4 flex gap-4">
-        <Button iconAfter={MoveRight} href={`/projects/${project.id}`}>
-          {viewProject}
-        </Button>
-        {project.data.link && (
-          <Button
-            href={project.data.link}
-            target="_blank"
-            iconAfter={ExternalLink}
-          >
-            {viewExternalProject}
+      {viewProject && viewExternalProject && (
+        <div className="mt-4 flex gap-x-4 gap-y-2 flex-wrap">
+          <Button iconAfter={MoveRight} href={`/projects/${project.id}`}>
+            {viewProject}
           </Button>
-        )}
-      </div>}
+          {project.data.link && (
+            <Button
+              href={project.data.link}
+              target="_blank"
+              iconAfter={ExternalLink}
+            >
+              {viewExternalProject}
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   )
 }

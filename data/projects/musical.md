@@ -6,10 +6,9 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 link: https://kidsmusical.ch
 published: 11.02.2025
 tags:
-  public:
-    - personal
-    - next.js
-    - pwa
+  - personal
+  - next.js
+  - pwa
 ---
 
 This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users.

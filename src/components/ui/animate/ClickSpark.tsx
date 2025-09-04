@@ -33,9 +33,9 @@ export default function ClickSpark({
   const startTimeRef = useRef<number | null>(null)
 
   useEffect(() => {
-    document.body.addEventListener('click', handleClick)
+    document.body.addEventListener('click', handleClick as any)
     return () => {
-      document.body.removeEventListener('click', handleClick)
+      document.body.removeEventListener('click', handleClick as any)
     }
   }, [])
 
@@ -147,7 +147,6 @@ export default function ClickSpark({
   ])
 
   const handleClick = (e: MouseEvent<HTMLElement>): void => {
-    console.log('handle click')
     const canvas = canvasRef.current
     if (!canvas) return
     const rect = canvas.getBoundingClientRect()

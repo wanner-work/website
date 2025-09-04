@@ -17,7 +17,7 @@ const proj = projects[0]
   >
     <ProjectDisplay
       tags={projects
-        .flatMap((project) => project.data.tags.public)
+        .flatMap((project) => project.data.tags)
         .filter((tag, index, self) => self.indexOf(tag) === index)}
       projects={projects}
       viewProject={i18n('projects.view')}
