@@ -6,12 +6,12 @@ import Skills from '../components/pages/home/Skills'
 import Title from '../components/pages/home/Title'
 import Testimonials from '../components/pages/home/Testimonials'
 
-import Projects from '@/components/pages/home/Projects'
 import Button from '@/components/ui/button/Button'
 import { MoveRight } from 'lucide-react'
 import { getCollection } from 'astro:content'
 import { render } from 'astro:content'
 import i18n from '@/methods/i18n/i18n'
+import ProjectOverview from '@/components/pages/projects/ProjectOverview'
 
 const testimonials = await getCollection('testimonials', ({ data }) => {
   return data.priority === true;
@@ -45,10 +45,8 @@ const project = projects[0];
       subtitle={i18n('home.projects.subtitle')}
       className="mb-6 md:mt-32 mt-20"
     />
-    <Projects
-      id="musical"
-      description={project.data.description}
-      image={project.data.image}
+    <ProjectOverview
+      project={project}
     />
     <div class="mt-10 flex justify-center">
       <Button href="/projects" iconAfter={MoveRight}>

@@ -8,6 +8,7 @@ interface Props {
   iconAfter?: FunctionComponent<{
     className?: string
   }>
+  onClick?: () => void
 }
 
 export default function Button({
@@ -15,6 +16,7 @@ export default function Button({
   href,
   target,
   className,
+  onClick,
   children
 }: PropsWithChildren<Props>) {
   const Component = href ? 'a' : 'button'
@@ -23,10 +25,11 @@ export default function Button({
     <Component
       href={href}
       target={target}
+      onClick={onClick ?? (() => {})}
       className={getFadeClassName(
         'text-light dark:text-dark flex cursor-pointer items-center gap-3 rounded-full transition-all hover:gap-5 hover:opacity-80 active:scale-95',
         children && 'px-6 py-4 text-sm font-medium',
-        !children && 'size-[56px] items-center justify-center',
+        !children && 'size-[52px] items-center justify-center',
         className
       )}
     >

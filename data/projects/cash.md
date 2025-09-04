@@ -7,7 +7,6 @@ link: https://cash.wanner.work
 published: 11.02.2025
 tags:
   public:
-    - personal
     - next.js
     - pwa
   hidden:

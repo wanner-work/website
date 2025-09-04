@@ -1,5 +1,8 @@
 import getFadeClassName from '@/methods/ui/getFadeClassName'
 import { useEffect, useState } from 'react'
+import Button from '@/components/ui/button/Button'
+import { Cross, X } from 'lucide-react'
+import Title from '../home/Title'
 
 interface Props {
   tags: string[]
@@ -41,22 +44,21 @@ export default function ProjectFilter({ tags, onTagCallback }: Props) {
     url.search = params.toString()
     window.history.pushState({}, '', url.toString())
 
+    setActiveTabs(Array.from(params.getAll('tag')))
     onTagCallback(Array.from(params.getAll('tag')))
   }
 
   return (
-    <div className="mb-8 flex flex-wrap gap-2">
-      {tags.map((tag) => (
-        <button
-          key={tag}
-          className={getFadeClassName(
-            'text-light cursor-pointer rounded-full px-2 py-1 text-[10px] font-medium uppercase transition-all hover:opacity-80 active:scale-95'
-          )}
-          onClick={() => toggleTag(tag)}
-        >
-          {tag}
-        </button>
-      ))}
-    </div>
+      <div className="mb-12 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <Button
+            key={tag}
+            iconAfter={activeTabs.includes(tag) ? X : undefined}
+            onClick={() => toggleTag(tag)}
+          >
+            {tag}
+          </Button>
+        ))}
+      </div>
   )
 }

@@ -6,8 +6,8 @@ import { ExternalLink, MoveRight } from 'lucide-react'
 
 interface Props {
   project: CollectionEntry<'projects'>
-  viewProject: string
-  viewExternalProject: string
+  viewProject?: string
+  viewExternalProject?: string
 }
 
 export default function ProjectOverview({
@@ -34,7 +34,7 @@ export default function ProjectOverview({
             <span
               key={tag + project.id}
               className={getFadeClassName(
-                'text-light rounded-full px-2 py-1 text-[10px] font-medium uppercase'
+                'text-light rounded-lg px-2 py-1 text-[10px] font-medium uppercase'
               )}
             >
               {tag}
@@ -46,7 +46,7 @@ export default function ProjectOverview({
         </p>
         <p className="mt-2 opacity-80">{project.data.description}</p>
       </a>
-      <div className="mt-4 flex gap-4">
+      {(viewProject && viewExternalProject) && <div className="mt-4 flex gap-4">
         <Button iconAfter={MoveRight} href={`/projects/${project.id}`}>
           {viewProject}
         </Button>
@@ -59,7 +59,7 @@ export default function ProjectOverview({
             {viewExternalProject}
           </Button>
         )}
-      </div>
+      </div>}
     </div>
   )
 }
