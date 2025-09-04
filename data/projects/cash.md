@@ -1,7 +1,6 @@
 ---
 image: /images/projects/cash.png
 title: Cash
-tagline: personal project
 description: Platform to track and analyse your spendings. Built with Next.js and Supabase.
 link: https://cash.wanner.work
 published: 11.02.2025

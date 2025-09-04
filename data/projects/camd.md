@@ -1,14 +1,12 @@
 ---
-image: /images/projects/musical.png
-title: Kids Musical
+image: /images/projects/camd.png
+title: Test Reports Search
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-link: https://kidsmusical.ch
+link: https://camd2.hubersuhner.com
 published: 11.02.2025
 tags:
-  - personal
+  - clavis
   - next.js
-  - pwa
-  - supabase
 ---
 
 This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users.

@@ -46,6 +46,16 @@ export default function ProjectFilter({ tags, onTagCallback }: Props) {
     onTagCallback(Array.from(params.getAll('tag')))
   }
 
+  const clearTabs = () => {
+    const url = new URL(window.location.href)
+    const params = new URLSearchParams(url.search)
+    params.delete('tag')
+    url.search = params.toString()
+    window.history.pushState({}, '', url.toString())
+    setActiveTabs([])
+    onTagCallback([])
+  }
+
   return (
     <div className="mb-12 flex flex-wrap gap-2">
       {tags.map((tag) => (
@@ -57,6 +67,10 @@ export default function ProjectFilter({ tags, onTagCallback }: Props) {
           {tag}
         </Button>
       ))}
+      {activeTabs.length > 0 && <Button
+          iconAfter={X}
+          onClick={clearTabs}
+        />}
     </div>
   )
 }

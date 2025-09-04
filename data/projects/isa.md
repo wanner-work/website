@@ -1,7 +1,6 @@
 ---
 image: /images/projects/zubi.png
 title: In Store Assistant
-tagline: zubi
 description: Platform to track and analyse your spendings. Built with Next.js and Supabase.dd
 published: 11.02.2025
 tags:

@@ -1,13 +1,13 @@
 ---
-image: /images/projects/zubi.png
-title: zubi.swiss
+image: /images/projects/dockit.png
+title: Internal Liferay CLI
 description: Platform to track and analyse your spendings. Built with Next.js and Supabase.dd
-link: https://zubi.swiss
 published: 11.02.2025
 tags:
-  - next.js
-  - mui
-  - zubi
+  - rolldown
+  - node.js
+  - docker
+  - liferay
 ---
 
 ![admin bereich](../images/cash-1.png)
