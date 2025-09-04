@@ -1,11 +1,14 @@
 import Container from '@/components/content/Container'
 import getFadeOverlayClassName from '@/methods/ui/getFadeOverlayClassName'
+import { ExternalLink } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 
 interface Props {
   name: string
   picture?: string
   company: string
+  tags?: string[]
+  visitProjects?: string
   companyLink?: string
   html?: string
 }
@@ -15,6 +18,8 @@ export default function TestimonialOverview({
   picture,
   company,
   companyLink,
+  visitProjects,
+  tags,
   html,
   children
 }: PropsWithChildren<Props>) {
@@ -23,13 +28,22 @@ export default function TestimonialOverview({
       <Container>
         {html ? (
           <div
-            className="mb-3 text-lg"
+            className="mb-2 text-lg"
             dangerouslySetInnerHTML={{ __html: html || '' }}
           />
         ) : (
-          <div className="mb-3 text-lg">{children}</div>
+          <div className="mb-2 text-lg">{children}</div>
         )}
       </Container>
+      {tags && tags.length > 0 && (
+        <a
+          href={`/projects/?tag=${tags?.join('&tag=')}`}
+          className="mb-5 -mt-2 flex items-center gap-1.5 text-sm transition-all hover:opacity-80"
+        >
+          <ExternalLink className="size-3.5" />
+          <span>{visitProjects}</span>
+        </a>
+      )}
       <div className="align-center flex gap-3 md:gap-5">
         {picture ? (
           <div className="relative aspect-square size-12 shrink-0 rounded-full">

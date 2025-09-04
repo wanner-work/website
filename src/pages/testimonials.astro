@@ -21,6 +21,8 @@ const testimonials = await getCollection('testimonials')
             picture={testimonial.data.picture}
             company={testimonial.data.company}
             companyLink={testimonial.data.companyLink}
+            tags={testimonial.data.tags}
+            visitProjects={i18n('testimonials.visit-projects')}
             html={testimonial.rendered?.html || ''}
           />
         ))
