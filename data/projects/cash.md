@@ -8,7 +8,8 @@ published: 11.02.2025
 tags:
   - next.js
   - pwa
-  - clavis
+  - personal
+  - supabase
 priority: true
 ---
 

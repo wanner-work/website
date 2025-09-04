@@ -9,7 +9,7 @@ const projects = defineCollection({
     title: z.string(),
     tagline: z.string(),
     description: z.string(),
-    link: z.string().url(),
+    link: z.string().url().optional(),
     published: z.coerce.date(),
     tags: z.array(z.string()),
     priority: z.boolean().optional()
