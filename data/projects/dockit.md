@@ -8,6 +8,7 @@ tags:
   - node.js
   - docker
   - liferay
+hidden: true
 ---
 
 ![admin bereich](../images/cash-1.png)

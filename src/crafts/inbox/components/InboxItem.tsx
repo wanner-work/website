@@ -63,24 +63,6 @@ export default function InboxItem({ index, onClosed }: Props) {
           height: isDeleted ? 0 : 'auto'
         }}
       >
-        <div
-          className={clsx(
-            'absolute top-0 h-[calc(100%-1px)] w-full',
-            x < 0 && 'bg-red-500'
-          )}
-        />
-        <div className="absolute top-0 left-0 h-full"></div>
-        <div className="absolute top-0 right-0 flex h-full items-center">
-          <motion.div
-            className="px-5"
-            animate={{
-              scale: x <= ANIMATION.thresholdLeft ? 1 : 0.7
-            }}
-          >
-            <TrashIcon className="text-light h-5 w-5" />
-          </motion.div>
-        </div>
-
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -103,6 +85,23 @@ export default function InboxItem({ index, onClosed }: Props) {
           <p className="text-light/70 text-[12px] lowercase">{description}</p>
         </motion.div>
       </motion.div>
+      <div
+        className={clsx(
+          'absolute top-0 h-[calc(100%-1px)] w-full',
+          x < 0 && 'bg-red-500'
+        )}
+      />
+      <div className="absolute top-0 left-0 h-full"></div>
+      <div className="absolute top-0 right-0 flex h-full items-center">
+        <motion.div
+          className="px-5"
+          animate={{
+            scale: x <= ANIMATION.thresholdLeft ? 1 : 0.7
+          }}
+        >
+          <TrashIcon className="text-light h-5 w-5" />
+        </motion.div>
+      </div>
     </motion.div>
   )
 }

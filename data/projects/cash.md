@@ -9,7 +9,6 @@ tags:
   - pwa
   - personal
   - supabase
-priority: true
 ---
 
 ![admin bereich](../images/cash-1.png)

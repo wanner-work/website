@@ -4,7 +4,10 @@ import Page from '../components/layout/Page'
 import Layout from '../layouts/Layout.astro'
 import i18n from '@/methods/i18n/i18n'
 import ProjectDisplay from '@/components/pages/projects/ProjectDisplay'
-const projects = await getCollection('projects')
+const projects = await getCollection(
+  'projects',
+  (project) => !project.data.hidden
+)
 
 const proj = projects[0]
 ---

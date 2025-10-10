@@ -11,7 +11,8 @@ const projects = defineCollection({
     link: z.string().url().optional(),
     published: z.coerce.date(),
     tags: z.array(z.string()),
-    priority: z.boolean().optional()
+    priority: z.boolean().optional(),
+    hidden: z.boolean().optional()
   })
 })
 

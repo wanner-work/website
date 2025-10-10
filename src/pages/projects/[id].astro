@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro'
 import Container from '@/components/content/Container'
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects')
+  const projects = await getCollection('projects', (project) => !project.data.hidden)
 
   return projects.map((project) => ({
     params: { id: project.id },

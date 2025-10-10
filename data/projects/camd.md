@@ -7,6 +7,7 @@ published: 11.02.2025
 tags:
   - clavis
   - next.js
+hidden: true
 ---
 
 This project includes several components. It has an event-specific landing page, a simple signup process, and an administrative view for managing registered users.

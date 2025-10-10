@@ -7,6 +7,7 @@ tags:
   - next.js
   - pwa
   - zubi
+hidden: true
 ---
 
 ![admin bereich](../images/cash-1.png)

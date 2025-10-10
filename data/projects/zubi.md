@@ -8,6 +8,7 @@ tags:
   - next.js
   - mui
   - zubi
+hidden: true
 ---
 
 ![admin bereich](../images/cash-1.png)

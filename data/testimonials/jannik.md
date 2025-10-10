@@ -8,4 +8,4 @@ tags:
 priority: true
 ---
 
-Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do eiusmod tempor incididunt ut
+In working with Jonas, I especially admired his **infectious fascination** for the web. I’m grateful to have **benefited** from his knowledge for many years.
