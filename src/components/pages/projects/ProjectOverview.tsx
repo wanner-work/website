@@ -22,11 +22,11 @@ export default function ProjectOverview({
         className="block transition-all hover:opacity-80"
       >
         <div className="rounded-large relative h-62 overflow-hidden">
-          <div className={getFadeOverlayClassName('absolute inset-0')} />
+          <div className={getFadeOverlayClassName('absolute inset-0 z-10')} />
           <img
             src={project.data.image}
             alt={project.data.description}
-            className="size-full object-cover"
+            className="z-0 size-full object-cover saturate-[40%]"
           />
         </div>
         <div className="mt-6 mb-3 flex gap-2">
@@ -47,7 +47,7 @@ export default function ProjectOverview({
         <p className="mt-2 opacity-80">{project.data.description}</p>
       </a>
       {viewProject && viewExternalProject && (
-        <div className="mt-4 flex gap-x-4 gap-y-2 flex-wrap">
+        <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
           <Button iconAfter={MoveRight} href={`/projects/${project.id}`}>
             {viewProject}
           </Button>

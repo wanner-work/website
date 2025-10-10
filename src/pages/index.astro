@@ -13,6 +13,10 @@ import { render } from 'astro:content'
 import i18n from '@/methods/i18n/i18n'
 import ProjectOverview from '@/components/pages/projects/ProjectOverview'
 
+const allTestimonials = await getCollection(
+  'testimonials',
+  (data) => !data.data.hidden
+)
 const testimonials = await getCollection('testimonials', ({ data }) => {
   return data.priority === true
 })
@@ -67,10 +71,14 @@ const project = projects[0]
     >
       <TestimonialContent />
     </Testimonials>
-    <div class="mt-10 flex justify-center">
-      <Button href="/testimonials" iconAfter={MoveRight}>
-        {i18n('home.testimonials.show-more')}
-      </Button>
-    </div>
+    {
+      allTestimonials.length > 1 && (
+        <div class="mt-10 flex justify-center">
+          <Button href="/testimonials" iconAfter={MoveRight}>
+            {i18n('home.testimonials.show-more')}
+          </Button>
+        </div>
+      )
+    }
   </Page>
 </Layout>

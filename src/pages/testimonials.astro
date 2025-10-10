@@ -5,7 +5,10 @@ import Layout from '../layouts/Layout.astro'
 import TestimonialOverview from '../components/pages/testimonials/TestimonialOverview'
 import i18n from '@/methods/i18n/i18n'
 
-const testimonials = await getCollection('testimonials')
+const testimonials = await getCollection(
+  'testimonials',
+  (testimonial) => !testimonial.data.hidden
+)
 ---
 
 <Layout title={i18n('testimonials.title')}>
