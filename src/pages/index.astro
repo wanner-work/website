@@ -5,7 +5,6 @@ import Header from '../components/pages/home/Header'
 import Skills from '../components/pages/home/Skills'
 import Title from '../components/pages/home/Title'
 import Testimonials from '../components/pages/home/Testimonials'
-
 import Projects from '@/components/pages/home/Projects'
 import Button from '@/components/ui/button/Button'
 import { MoveRight } from 'lucide-react'
@@ -14,15 +13,15 @@ import { render } from 'astro:content'
 import i18n from '@/methods/i18n/i18n'
 
 const testimonials = await getCollection('testimonials', ({ data }) => {
-  return data.priority === true;
-});
-const testimonial = testimonials[0];
-const { Content: TestimonialContent } = await render(testimonial);
+  return data.priority === true
+})
+const testimonial = testimonials[0]
+const { Content: TestimonialContent } = await render(testimonial)
 
 const projects = await getCollection('projects', ({ data }) => {
-  return data.priority === true;
-});
-const project = projects[0];
+  return data.priority === true
+})
+const project = projects[0]
 ---
 
 <Layout title="Portfolio">
@@ -46,7 +45,7 @@ const project = projects[0];
       className="mb-6 md:mt-32 mt-20"
     />
     <Projects
-      id="musical"
+      id={project.id}
       description={project.data.description}
       image={project.data.image}
     />

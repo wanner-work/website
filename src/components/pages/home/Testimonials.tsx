@@ -36,11 +36,15 @@ export default function Testimonials({
                 />
               </div>
               <div>
-                {props.tags && props.tags.length > 0 && 
-                  <a href={`/projects/?tag=${props.tags?.join('&tag=')}`} className='flex items-center gap-1.5 mb-2 text-sm transition-all hover:opacity-80'>
-                    <ExternalLink className='size-3.5' /><span>{props.visitProjects}</span>
+                {props.tags && props.tags.length > 0 && (
+                  <a
+                    href={`/projects/?tag=${props.tags?.join('&tag=')}`}
+                    className="mb-2 flex items-center gap-1.5 text-sm transition-all hover:opacity-80"
+                  >
+                    <ExternalLink className="size-3.5" />
+                    <span>{props.visitProjects}</span>
                   </a>
-                }
+                )}
                 <p className="font-serif font-medium">{props.name}</p>
                 <span className="flex flex-wrap gap-x-2 text-sm">
                   <p>{props.company}</p>

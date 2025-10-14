@@ -67,9 +67,6 @@ importers:
       react-use-draggable-scroll:
         specifier: ^0.4.7
         version: 0.4.7(react@18.3.1)
-      react-window:
-        specifier: ^2.0.2
-        version: 2.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwindcss:
         specifier: ^4.1.12
         version: 4.1.12
@@ -3744,15 +3741,6 @@ packages:
     peerDependencies:
       react: '>=16'
 
-  react-window@2.0.2:
-    resolution:
-      {
-        integrity: sha512-KCDGR+5qB6hG/eDWCNZku5ERMV21vjMEDJeobqPXI0/foVDaqjf+Fsum4iJu0ftLUTxh9yvZ9t7T+SJ7woOLFw==
-      }
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-
   react@18.3.1:
     resolution:
       {
@@ -7093,11 +7081,6 @@ snapshots:
   react-use-draggable-scroll@0.4.7(react@18.3.1):
     dependencies:
       react: 18.3.1
-
-  react-window@2.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react@18.3.1:
     dependencies:
